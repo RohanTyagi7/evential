@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evential — Real-Time Event Intelligence</title>
+  <meta name="description" content="Evential is the real-time intelligence layer for live events. Predict no-shows, eliminate waste, map attendee movement, and automate operations — from first check-in to final session." />
+  <meta name="keywords" content="event intelligence, real-time event analytics, trade show analytics, event management platform, event ROI, attendee tracking, event operations, event data platform" />
+  <meta property="og:title" content="Evential — Real-Time Event Intelligence" />
+  <meta property="og:description" content="Stop running events on guesswork. Evential gives organizers, exhibitors, and venues the real-time intelligence to make every decision count." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://evential.co" />
+  <link rel="canonical" href="https://evential.co" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700;800;900&family=Merriweather+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --primary:#3D516B;--primary-dark:#2a3a4d;--primary-light:#4f6882;
+      --secondary:#ACC5E1;--accent-gold:#C6831E;--accent-purple:#603D6A;
+      --accent-navy:#3D406A;--accent-rose:#6A3D5A;--accent-red:#8E181A;
+      --green:#2eb87a;--red-alert:#e05a5c;
+      --bg-dark:#0c1420;--bg-mid:#101c2c;--bg-card:#152236;
+      --text-primary:#eef2f7;--text-secondary:#8aaac8;--text-muted:#526d88;
+      --border:rgba(172,197,225,0.11);--border-strong:rgba(172,197,225,0.2);
+      --glow:rgba(172,197,225,0.05);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Merriweather Sans',sans-serif;background:var(--bg-dark);color:var(--text-primary);line-height:1.6;overflow-x:hidden}
+    ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg-dark)}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:2px}
+    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+    h1,h2,h3,h4{font-family:'Montserrat Alternates',sans-serif;line-height:1.12;letter-spacing:-0.02em}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 5%;height:70px;display:flex;align-items:center;justify-content:space-between;background:rgba(12,20,32,0.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:background 0.3s}
+    .nav-logo{font-family:'Montserrat Alternates',sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:0.1em;color:var(--text-primary);text-decoration:none;display:flex;align-items:center;gap:10px}
+    .nav-pulse{width:7px;height:7px;background:var(--accent-gold);border-radius:50%;animation:pulseGold 2.2s ease-in-out infinite}
+    @keyframes pulseGold{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(198,131,30,0.5)}50%{opacity:0.7;transform:scale(0.75);box-shadow:0 0 0 5px rgba(198,131,30,0)}}
+    .nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+    .nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text-primary)}
+    .nav-cta{background:var(--accent-gold)!important;color:#0c1420!important;padding:0.48rem 1.1rem!important;border-radius:3px!important;font-weight:700!important;transition:all 0.2s!important}
+    .nav-cta:hover{background:#d4911f!important;box-shadow:0 4px 18px rgba(198,131,30,0.35)!important}
+
+    .ticker-wrap{margin-top:70px;overflow:hidden;padding:0.72rem 0;border-bottom:1px solid var(--border);background:var(--bg-mid)}
+    .ticker-track{display:flex;animation:ticker 38s linear infinite;white-space:nowrap}
+    .ticker-item{display:inline-flex;align-items:center;gap:0.9rem;padding:0 2.4rem;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted)}
+    .ticker-item b{color:var(--accent-gold)}
+    .ticker-sep{color:var(--border-strong)}
+    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .live-chip{display:inline-flex;align-items:center;gap:5px;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green)}
+    .live-dot{width:5px;height:5px;background:var(--green);border-radius:50%;animation:livePulse 1.6s ease-in-out infinite}
+    @keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(46,184,122,0.5)}50%{box-shadow:0 0 0 5px rgba(46,184,122,0)}}
+
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 5% 80px;position:relative;overflow:hidden}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(172,197,225,0.033) 1px,transparent 1px),linear-gradient(90deg,rgba(172,197,225,0.033) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 80% at 50% 45%,black 10%,transparent 100%)}
+    .hero-orb{position:absolute;border-radius:50%;pointer-events:none}
+    .hero-orb-1{width:800px;height:800px;background:radial-gradient(circle,rgba(61,81,107,0.22) 0%,transparent 70%);top:-300px;right:-200px}
+    .hero-orb-2{width:480px;height:480px;background:radial-gradient(circle,rgba(96,61,106,0.13) 0%,transparent 70%);bottom:-80px;left:-80px}
+    .hero-content{position:relative;z-index:1;max-width:920px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.7rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent-gold);border:1px solid rgba(198,131,30,0.28);padding:0.38rem 0.9rem;border-radius:2px;background:rgba(198,131,30,0.07);margin-bottom:1.8rem}
+    .eyebrow-dot{width:5px;height:5px;background:var(--accent-gold);border-radius:50%}
+    .hero h1{font-size:clamp(2.8rem,5.8vw,5.4rem);font-weight:900;color:var(--text-primary);margin-bottom:1.5rem}
+    .hero h1 em{font-style:normal;color:var(--secondary)}
+    .hero h1 .cross{position:relative;color:var(--text-muted)}
+    .hero h1 .cross::after{content:'';position:absolute;left:0;top:52%;width:100%;height:2px;background:var(--accent-red);transform:translateY(-50%) rotate(-1deg)}
+    .hero-sub{font-size:clamp(1rem,1.7vw,1.2rem);color:var(--text-secondary);max-width:600px;margin-bottom:2.5rem;line-height:1.8;font-weight:300}
+    .btn-row{display:flex;gap:0.9rem;flex-wrap:wrap;align-items:center}
+    .btn-primary{background:var(--accent-gold);color:#0c1420;padding:0.85rem 1.9rem;border-radius:3px;font-family:'Montserrat Alternates',sans-serif;font-weight:700;font-size:0.88rem;letter-spacing:0.04em;text-decoration:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:all 0.22s}
+    .btn-primary:hover{background:#d4911f;transform:translateY(-2px);box-shadow:0 8px 28px rgba(198,131,30,0.38)}
+    .btn-ghost{background:transparent;color:var(--text-secondary);padding:0.85rem 1.9rem;border-radius:3px;font-family:'Montserrat Alternates',sans-serif;font-weight:600;font-size:0.88rem;letter-spacing:0.04em;text-decoration:none;border:1px solid var(--border);display:inline-flex;align-items:center;gap:7px;transition:all 0.22s}
+    .btn-ghost:hover{border-color:var(--secondary);color:var(--text-primary);background:var(--glow)}
+    .hero-stats{margin-top:3.5rem;display:flex;flex-wrap:wrap;border:1px solid var(--border);border-radius:6px;overflow:hidden;max-width:680px;background:rgba(21,34,54,0.6);backdrop-filter:blur(12px)}
+    .hero-stat{flex:1;min-width:130px;padding:1.4rem 1.5rem;border-right:1px solid var(--border);transition:background 0.2s}
+    .hero-stat:last-child{border-right:none}
+    .hero-stat:hover{background:rgba(172,197,225,0.04)}
+    .hero-stat-num{font-family:'Montserrat Alternates',sans-serif;font-size:1.75rem;font-weight:900;color:var(--text-primary);line-height:1;margin-bottom:5px}
+    .hero-stat-num span{color:var(--accent-gold)}
+    .hero-stat-label{font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600}
+
+    .img-ph{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.7rem;color:var(--text-muted);font-size:0.72rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;position:relative;overflow:hidden}
+    .img-ph::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(61,81,107,0.15) 0%,rgba(96,61,106,0.08) 100%)}
+    .img-ph-icon{opacity:0.3;position:relative;z-index:1}
+    .img-ph span{position:relative;z-index:1}
+
+    section{padding:96px 5%;position:relative;}
+    .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .section-label::before{content:'';width:22px;height:1px;background:var(--accent-gold)}
+    .section-title{font-size:clamp(1.75rem,3.2vw,2.8rem);font-weight:800;color:var(--text-primary);margin-bottom:1.1rem;max-width:680px}
+    .section-sub{font-size:1rem;color:var(--text-secondary);max-width:560px;line-height:1.78;font-weight:300}
+    .section-timeline{margin-right:auto;margin-left:auto;width: 100%;display: inline-flex;flex-direction:column;
+  justify-content: center;
+  align-items: center;}
+
+    .problem-section{background:var(--bg-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .problem-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
+    .problem-cards{display:flex;flex-direction:column;gap:1.25rem}
+    .problem-card{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent-red);padding:1.4rem 1.6rem;border-radius:4px;transition:border-left-color 0.3s,transform 0.3s}
+    .problem-card:hover{border-left-color:var(--accent-gold);transform:translateX(4px)}
+    .problem-stat{font-family:'Montserrat Alternates',sans-serif;font-size:1.55rem;font-weight:900;color:var(--accent-gold);margin-bottom:0.35rem}
+    .problem-card p{font-size:0.875rem;color:var(--text-secondary);line-height:1.65}
+    .event-log{display:flex;flex-direction:column;gap:0.85rem}
+    .event-log-title{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.25rem}
+    .log-entry{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:1.1rem 1.3rem;display:flex;align-items:flex-start;gap:1rem}
+    .log-dot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0}
+    .dot-red{background:var(--accent-red)}.dot-gold{background:var(--accent-gold)}.dot-green{background:var(--green)}
+    .log-body{flex:1}
+    .log-title{font-size:0.84rem;font-weight:600;color:var(--text-primary);margin-bottom:0.2rem}
+    .log-desc{font-size:0.77rem;color:var(--text-muted);line-height:1.5}
+    .log-badge{font-size:0.65rem;font-weight:700;padding:0.22rem 0.55rem;border-radius:2px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+    .badge-loss{background:rgba(142,24,26,0.18);color:var(--red-alert)}
+    .badge-risk{background:rgba(198,131,30,0.13);color:var(--accent-gold)}
+
+    .platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:4rem;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+    .platform-card{background:var(--bg-dark);padding:2.4rem;position:relative;overflow:hidden;transition:background 0.3s}
+    .platform-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent-gold),transparent);opacity:0;transition:opacity 0.3s}
+    .platform-card:hover{background:rgba(21,34,54,0.9)}
+    .platform-card:hover::after{opacity:1}
+    .platform-icon{width:38px;height:38px;color:var(--accent-gold);margin-bottom:1.3rem;transition:transform 0.3s}
+    .platform-card:hover .platform-icon{transform:scale(1.1)}
+    .platform-card h3{font-size:1rem;font-weight:700;margin-bottom:0.65rem}
+    .platform-card p{font-size:0.83rem;color:var(--text-muted);line-height:1.7}
+
+    .how-section{background:var(--bg-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .how-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+    .how-steps{display:flex;flex-direction:column}
+    .how-step{display:flex;gap:1.5rem;align-items:flex-start;padding:1.5rem 0;border-bottom:1px solid var(--border)}
+    .how-step:first-child{padding-top:0}
+    .how-step:last-child{border-bottom:none;padding-bottom:0}
+    .step-circle{width:44px;height:44px;flex-shrink:0;border-radius:50%;border:1px solid var(--border);background:var(--bg-dark);display:flex;align-items:center;justify-content:center;font-family:'Montserrat Alternates',sans-serif;font-size:0.95rem;font-weight:800;color:var(--accent-gold)}
+    .how-step h4{font-size:0.95rem;font-weight:700;margin-bottom:0.35rem}
+    .how-step p{font-size:0.82rem;color:var(--text-muted);line-height:1.65}
+    .how-visual{border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--bg-card)}
+    .how-visual-header{padding:0.85rem 1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;background:var(--bg-mid)}
+    .win-dot{width:10px;height:10px;border-radius:50%}
+    .win-red{background:#ff5f57}.win-gold{background:#ffbd2e}.win-green{background:#28c840}
+    .how-visual-header-label{font-size:0.72rem;color:var(--text-muted);margin-left:auto;letter-spacing:0.06em}
+    .dashboard-feed{padding:1.25rem;display:flex;flex-direction:column;gap:0.6rem}
+    .feed-item{background:var(--bg-mid);border:1px solid var(--border);border-radius:4px;padding:0.8rem 1rem;display:flex;align-items:center;gap:0.75rem;font-size:0.78rem;animation:feedIn 0.4s ease both}
+    @keyframes feedIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .feed-icon{flex-shrink:0;color:var(--accent-gold)}
+    .feed-text{color:var(--text-secondary);flex:1;line-height:1.4}
+    .feed-text b{color:var(--text-primary);font-weight:600}
+    .feed-time{font-size:0.65rem;color:var(--text-muted);white-space:nowrap}
+    .feed-item.alert-item{border-color:rgba(198,131,30,0.22)}
+    .feed-item.green-item .feed-icon{color:var(--green)}
+
+    .tab-nav{display:flex;border-bottom:1px solid var(--border);margin-bottom:3rem;margin-top:3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;overflow-y:hidden;position:relative}
+    .tab-nav::-webkit-scrollbar{height:6px}
+    .tab-nav::-webkit-scrollbar-track{background:transparent}
+    .tab-nav::-webkit-scrollbar-thumb{background:var(--accent-gold);border-radius:3px}
+    .tab-nav::-webkit-scrollbar-thumb:hover{background:var(--secondary)}
+    .tab-btn{background:none;border:none;border-bottom:2px solid transparent;padding:0.9rem 1.8rem;margin-bottom:-1px;color:var(--text-muted);font-family:'Montserrat Alternates',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:all 0.22s;white-space:nowrap;flex-shrink:0}
+    .tab-btn:hover{color:var(--text-secondary)}
+    .tab-btn.active{color:var(--accent-gold);border-bottom-color:var(--accent-gold)}
+    .tab-panel{display:none}
+    .tab-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;animation:fadeUp 0.3s ease}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .tab-content h3{font-size:1.55rem;font-weight:800;margin-bottom:1rem}
+    .tab-content>p{font-size:0.92rem;color:var(--text-secondary);line-height:1.78;margin-bottom:1.5rem;font-weight:300}
+    .feature-list{display:flex;flex-direction:column;gap:0.7rem}
+    .feature-item{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.86rem;color:var(--text-secondary)}
+    .feature-arrow{color:var(--accent-gold);flex-shrink:0;margin-top:2px}
+    .tab-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.75rem;display:flex;flex-direction:column;gap:0.7rem}
+    .metric-row{display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;background:var(--bg-mid);border-radius:3px;border:1px solid var(--border)}
+    .metric-label{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em}
+    .metric-value{font-family:'Montserrat Alternates',sans-serif;font-size:0.92rem;font-weight:700}
+    .mv-green{color:var(--green)}.mv-gold{color:var(--accent-gold)}.mv-red{color:var(--red-alert)}
+    .mini-bar-section{margin-top:0.5rem}
+    .mini-bar-label{font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.09em;margin-bottom:0.6rem}
+    .bar-row{display:flex;align-items:center;gap:0.65rem;margin-bottom:0.45rem}
+    .bar-name{font-size:0.68rem;color:var(--text-muted);width:72px;text-align:right;flex-shrink:0}
+    .bar-track{flex:1;height:5px;background:var(--bg-dark);border-radius:3px;overflow:hidden}
+    .bar-fill{height:100%;border-radius:3px;background:var(--secondary);transition:width 1.2s ease}
+    .bar-fill.gold{background:var(--accent-gold)}
+    .bar-fill.dim{background:var(--primary-light)}
+
+    .data-section{background:var(--bg-mid);border-top:1px solid var(--border)}
+    .data-layout{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem}
+    .data-card{background:var(--bg-card);border:1px solid var(--border);padding:1.7rem;border-radius:6px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s}
+    .data-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%}
+    .dc-physical::before{background:var(--secondary)}
+    .dc-interaction::before{background:var(--accent-gold)}
+    .dc-crm::before{background:#9b6bac}
+    .dc-ops::before{background:var(--green)}
+    .data-card:hover{transform:translateY(-3px);border-color:var(--border-strong)}
+    .data-card-tag{font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.7rem}
+    .t-physical{color:var(--secondary)}.t-interaction{color:var(--accent-gold)}.t-crm{color:#9b6bac}.t-ops{color:var(--green)}
+    .data-card h4{font-size:0.98rem;font-weight:700;margin-bottom:0.55rem}
+    .data-card p{font-size:0.8rem;color:var(--text-muted);line-height:1.65}
+    .chip-row{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.9rem}
+    .chip{font-size:0.65rem;padding:0.18rem 0.5rem;border-radius:2px;background:var(--bg-mid);color:var(--text-muted);border:1px solid var(--border);font-family:'Montserrat Alternates',sans-serif;font-weight:600;letter-spacing:0.04em}
+
+    .proof-section{background:var(--bg-dark);border-top:1px solid var(--border)}
+    .proof-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start;margin-top:3rem}
+    .proof-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+    .proof-stat{background:var(--bg-card);padding:1.75rem;text-align:center}
+    .proof-stat-num{font-family:'Montserrat Alternates',sans-serif;font-size:2rem;font-weight:900;color:var(--accent-gold);line-height:1;margin-bottom:0.4rem}
+    .proof-stat-lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;font-weight:600}
+    .proof-image-block{display:grid;flex-direction:column;gap:1rem;margin-top:1rem}
+    .proof-image-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+    .vision-section{background:linear-gradient(145deg,#0f1a28 0%,var(--bg-dark) 55%);border-top:1px solid var(--border)}
+    .vision-rail{margin-top:4rem;position:relative}
+    .vision-rail::before{content:'';position:absolute;left:116px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,var(--accent-gold) 0%,var(--primary) 60%,transparent 100%)}
+    .vision-item{display:flex;gap:2.5rem;align-items:flex-start;margin-bottom:2.75rem;position:relative}
+    .vision-year{font-family:'Montserrat Alternates',sans-serif;font-size:0.82rem;font-weight:800;color:var(--text-muted);width:88px;text-align:right;padding-top:3px;flex-shrink:0}
+    .vision-node{width:11px;height:11px;border-radius:50%;background:var(--bg-dark);border:2px solid var(--border);margin-top:4px;flex-shrink:0;position:relative;z-index:1}
+    .vision-item.now .vision-node{background:var(--accent-gold);border-color:var(--accent-gold);box-shadow:0 0 14px rgba(198,131,30,0.55)}
+    .vision-item.now .vision-year{color:var(--accent-gold)}
+    .vision-content h4{font-size:1rem;font-weight:700;margin-bottom:0.35rem}
+    .vision-content p{font-size:0.83rem;color:var(--text-muted);line-height:1.65;max-width:480px}
+
+    .traction-section{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-mid);padding:0}
+    .traction-inner{display:grid;grid-template-columns:1fr 3fr;align-items:stretch}
+    .traction-label-col{padding:3rem 2rem 3rem 5%;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:0.5rem}
+    .traction-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent-gold)}
+    .traction-heading{font-family:'Montserrat Alternates',sans-serif;font-size:1rem;font-weight:800;color:var(--text-primary);line-height:1.3}
+    .traction-sub{font-size:0.78rem;color:var(--text-muted);line-height:1.6;margin-top:0.25rem}
+    .traction-stats-col{padding:3rem 5% 3rem 3rem;display:grid;grid-template-columns:repeat(4,1fr)}
+    .traction-stat{padding:0 2rem;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center}
+    .traction-stat:first-child{padding-left:0}
+    .traction-stat:last-child{border-right:none}
+    .traction-num{font-family:'Montserrat Alternates',sans-serif;font-size:1.65rem;font-weight:900;color:var(--text-primary);line-height:1;margin-bottom:0.35rem}
+    .traction-num span{color:var(--accent-gold)}
+    .traction-lbl{font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;line-height:1.4}
+
+    .cta-section{text-align:center;padding:110px 5%;position:relative;overflow:hidden}
+    .cta-section::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(198,131,30,0.07) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+    .cta-section h2{font-size:clamp(1.9rem,3.8vw,3.3rem);font-weight:900;max-width:660px;margin:1rem auto 1.3rem}
+    .cta-section>p{font-size:1rem;color:var(--text-secondary);max-width:480px;margin:0 auto 2.5rem;font-weight:300;line-height:1.8}
+    .cta-form{display:flex;gap:0.7rem;max-width:440px;margin:0 auto 1rem;flex-wrap:wrap;justify-content:center}
+    .cta-input{flex:1;min-width:210px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);padding:0.85rem 1.15rem;border-radius:3px;font-family:'Merriweather Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s}
+    .cta-input::placeholder{color:var(--text-muted)}
+    .cta-input:focus{border-color:var(--accent-gold)}
+    .cta-note{font-size:0.72rem;color:var(--text-muted)}
+    .cta-note a{color:var(--accent-gold);text-decoration:none}
+
+    footer{border-top:1px solid var(--border);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+    .footer-logo{font-family:'Montserrat Alternates',sans-serif;font-weight:800;font-size:1rem;letter-spacing:0.1em;color:var(--text-muted)}
+    .footer-links{display:flex;gap:1.75rem;list-style:none}
+    .footer-links a{font-size:0.74rem;color:var(--text-muted);text-decoration:none;text-transform:uppercase;letter-spacing:0.07em;font-weight:600;transition:color 0.2s}
+    .footer-links a:hover{color:var(--text-secondary)}
+    .footer-copy{font-size:0.7rem;color:var(--text-muted)}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}.d4{transition-delay:0.4s}
+
+    @media(max-width:900px){
+      .problem-layout,.how-layout,.proof-layout,.data-layout,.tab-panel.active{grid-template-columns:1fr;gap:2.5rem}
+      .platform-grid{grid-template-columns:1fr}
+      .traction-inner{grid-template-columns:1fr}
+      .traction-stats-col{grid-template-columns:1fr 1fr;gap:1.5rem;padding:2rem 5%}
+      .traction-stat{padding:0;border-right:none;border-bottom:1px solid var(--border);padding-bottom:1.5rem}
+      .traction-stat:last-child{border-bottom:none;padding-bottom:0}
+      .nav-links{display:none}
+      .vision-rail::before{left:88px}
+      footer{flex-direction:column;align-items:flex-start}
+      .footer-logo{width:100%}
+      .footer-links{width:100%;flex-direction:column;gap:0.8rem;margin:1rem 0}
+      .footer-copy{width:100%}
+      .vision-rail{margin-top:2rem}
+      .vision-item{display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:2rem;position:relative;flex-wrap:wrap}
+      .vision-year{width:100%;text-align:left;font-size:0.95rem;padding-top:0;margin-bottom:0.5rem}
+      .vision-node{margin-left:0}
+      .vision-content{flex:1;min-width:100%;padding-left:0}
+      .vision-rail::before{display:none}
+      .privacy-grid{grid-template-columns:1fr!important;gap:1rem!important}
+      .privacy-grid>div{border-left:none!important;border-right:none!important;border-bottom:1px solid var(--border)}
+      .privacy-grid>div:last-child{border-bottom:none}
+      .buttons-grid{grid-template-columns:1fr!important}
+    }
+    @media(max-width:768px){
+      section{padding:60px 5%}
+    }
+    @media(max-width:600px){
+      section{padding:48px 5%}
+      .hero{padding:100px 5% 60px}
+      .btn-row{flex-direction:column;width:100%}
+      .btn-primary,.btn-ghost{width:100%;justify-content:center;text-align:center}
+      .hero-stats{max-width:100%;grid-template-columns:1fr 1fr;gap:1px}
+      .hero-stat{min-width:unset;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.2rem 1rem}
+      .hero-stat:nth-child(2n),.hero-stat:nth-child(4n){border-right:none}
+      .hero-stat:nth-child(3),.hero-stat:nth-child(4){border-bottom:none}
+      .vision-year{font-size:0.85rem}
+      .vision-content h4{font-size:0.95rem}
+      .vision-content p{font-size:0.78rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="#" class="nav-logo">EVENTIAL</a>
+  <ul class="nav-links">
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="#who">Who We Serve</a></li>
+    <li><a href="#data">Data Layer</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#pilot" class="nav-cta">Request a Pilot</a></li>
+  </ul>
+</nav>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="live-chip"><span class="live-dot"></span>Live Intelligence</span><span class="ticker-sep">—</span></span>
+    <span class="ticker-item"><b>39%</b> avg. no-show rate <span class="ticker-sep">·</span> Predicted Before Doors Open <span class="ticker-sep">—</span></span>
+    <span class="ticker-item"><b>33%</b> food waste per event <span class="ticker-sep">·</span> Preventable With Real-Time Data <span class="ticker-sep">—</span></span>
+    <span class="ticker-item">1 Signal Every <b>4.6 Seconds</b> Per Attendee <span class="ticker-sep">—</span></span>
+    <span class="ticker-item">Booth Dwell Time <span class="ticker-sep">·</span> Session Engagement <span class="ticker-sep">·</span> Networking Density <span class="ticker-sep">—</span></span>
+    <span class="ticker-item">Hardware-Invisible <span class="ticker-sep">·</span> Intelligence-First <span class="ticker-sep">—</span></span>
+    <span class="ticker-item"><span class="live-chip"><span class="live-dot"></span>Live Intelligence</span><span class="ticker-sep">—</span></span>
+    <span class="ticker-item"><b>39%</b> avg. no-show rate <span class="ticker-sep">·</span> Predicted Before Doors Open <span class="ticker-sep">—</span></span>
+    <span class="ticker-item"><b>33%</b> food waste per event <span class="ticker-sep">·</span> Preventable With Real-Time Data <span class="ticker-sep">—</span></span>
+    <span class="ticker-item">1 Signal Every <b>4.6 Seconds</b> Per Attendee <span class="ticker-sep">—</span></span>
+    <span class="ticker-item">Booth Dwell Time <span class="ticker-sep">·</span> Session Engagement <span class="ticker-sep">·</span> Networking Density <span class="ticker-sep">—</span></span>
+    <span class="ticker-item">Hardware-Invisible <span class="ticker-sep">·</span> Intelligence-First <span class="ticker-sep">—</span></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="eyebrow"><span class="eyebrow-dot"></span>Real-Time Event Intelligence</div>
+    <h1>
+      Stop running events<br>
+      on <span class="cross">guesswork</span>.<br>
+      Start running them<br>
+      on <em>live data</em>.
+    </h1>
+    <p class="hero-sub">Reduce no-shows. Cut catering waste. Prove sponsor ROI. We give event organizers, exhibitors, and venues the real-time data to make every decision count — before, during, and after the event.</p>
+    <div class="btn-row">
+      <a href="#pilot" class="btn-primary">Request a Pilot <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
+      <a href="#platform" class="btn-ghost">See How It Works <i data-lucide="chevron-down" style="width:15px;height:15px;"></i></a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">39<span>%</span></div>
+        <div class="hero-stat-label">Avg. No-Show Rate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">33<span>%</span></div>
+        <div class="hero-stat-label">Meals Wasted Per Event</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span>$</span>0</div>
+        <div class="hero-stat-label">Insight From Surveys Alone</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">Real<span>.</span></div>
+        <div class="hero-stat-label">Numbers Backing Claims</div>
+      </div>
+    </div>
+    <p style="margin-top:0.85rem;font-size:0.68rem;color:var(--text-muted);letter-spacing:0.05em;">* Based on Evential's live field deployment, February 2026. <a href="#proof" style="color:var(--accent-gold);text-decoration:none;">Read the full case study →</a></p>
+  </div>
+</section>
+
+<section class="problem-section" id="problem">
+  <div class="section-label">The Problem</div>
+  <h2 class="section-title">Every event assumption has a price tag. Most organizers never see the bill.</h2>
+  <p class="section-sub">You plan for the headcount on your registration list. You order food days in advance. You design a floor plan in a spreadsheet. Then reality shows up — and it never matches the plan.</p>
+  <div class="problem-layout">
+    <div class="problem-cards">
+      <div class="problem-card reveal">
+        <div class="problem-stat">Thousands</div>
+        <p>Of registered attendees don't show up. Yet every catering order, seat count, and staff allocation is built around 100% of sign-ups. That gap isn't bad luck — it's a structural forecasting failure.</p>
+      </div>
+      <div class="problem-card reveal d1">
+        <div class="problem-stat">Hundreds</div>
+        <p>Of prepared meals go untouched at the average event. Pre-ordered catering locked in days before doors open means food, and money, goes straight into the trash, every single time.</p>
+      </div>
+      <div class="problem-card reveal d2">
+        <div class="problem-stat">Zero</div>
+        <p>Existing platforms tell you who walked through the door, which sessions held attention, where the crowd lingered, or who had the most valuable conversations — they just tell you who registered. The physical event is invisible.</p>
+      </div>
+    </div>
+    <div class="event-log reveal d1">
+      <div class="event-log-title">What a typical event looks like without Evential</div>
+      <div class="log-entry">
+        <div class="log-dot dot-red"></div>
+        <div class="log-body">
+          <div class="log-title">Catering ordered 3 days out</div>
+          <div class="log-desc">Lunch orders placed against a registration count. No model. No adjustment trigger. No flexibility when the headcount shifts.</div>
+        </div>
+        <div class="log-badge badge-loss">$$$ sunk</div>
+      </div>
+      <div class="log-entry">
+        <div class="log-dot dot-red"></div>
+        <div class="log-body">
+          <div class="log-title">No-shows confirm — waitlist unreachable</div>
+          <div class="log-desc">Reserved seats go empty. Waitlisted attendees couldn't be reached in time. Capacity and opportunity both wasted.</div>
+        </div>
+        <div class="log-badge badge-loss">Lost seats</div>
+      </div>
+      <div class="log-entry">
+        <div class="log-dot dot-gold"></div>
+        <div class="log-body">
+          <div class="log-title">Breakout room sits at 18% capacity</div>
+          <div class="log-desc">Two sessions running in parallel — one packed, one nearly empty. No live visibility to rebalance. Nobody knows until it's over.</div>
+        </div>
+        <div class="log-badge badge-risk">Space wasted</div>
+      </div>
+      <div class="log-entry">
+        <div class="log-dot dot-gold"></div>
+        <div class="log-body">
+          <div class="log-title">Post-event survey sent — 11% respond</div>
+          <div class="log-desc">A week of analysis yields vague feelings and a few quotes. None of it is actionable. The same problems repeat at the next event.</div>
+        </div>
+        <div class="log-badge badge-risk">Blind spots persist</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platform">
+  <div class="section-label">The Platform</div>
+  <h2 class="section-title">You're buying intelligence. The hardware is how we guarantee its accuracy.</h2>
+  <p class="section-sub">Per-event pricing. No hardware costs. Evential layers on top of your existing registration and CRM stack — no rip-and-replace. We add the physical intelligence layer that no platform currently provides.</p>
+  <div class="platform-grid reveal">
+    <div class="platform-card">
+      <i data-lucide="radio" class="platform-icon"></i>
+      <h3>Smart Badge Infrastructure</h3>
+      <p>Ultra-slim badges indistinguishable from standard lanyards. BLE + UWB precision. One data point every 4.6 seconds per attendee. No app. No behavioral change. Pure signal.</p>
+    </div>
+    <div class="platform-card">
+      <i data-lucide="map" class="platform-icon"></i>
+      <h3>Live Spatial Intelligence</h3>
+      <p>Real-time heat maps, dwell time by zone, session engagement depth, crowd density — updating continuously. See your event as it actually unfolds, not just as you planned it.</p>
+    </div>
+    <div class="platform-card">
+      <i data-lucide="brain" class="platform-icon"></i>
+      <h3>Predictive Attendance Modeling</h3>
+      <p>Travel distance, registration timing, historical patterns — combined into per-registrant probability scores. Know your real headcount before the first person walks through the door.</p>
+    </div>
+    <div class="platform-card">
+      <i data-lucide="share-2" class="platform-icon"></i>
+      <h3>Interaction & Networking Metrics</h3>
+      <p>Badge proximity logs every meaningful conversation. Attendees see who they met. Organizers see networking density by session, time, and zone — the social layer, finally quantified.</p>
+    </div>
+    <div class="platform-card">
+      <i data-lucide="package" class="platform-icon"></i>
+      <h3>Inventory & Asset Intelligence</h3>
+      <p>Tagged catering containers, AV equipment, and assets tracked in real time. Depletion alerts before stations run dry. Automatic reconciliation at close. Waste becomes a variable you control.</p>
+    </div>
+    <div class="platform-card">
+      <i data-lucide="trending-up" class="platform-icon"></i>
+      <h3>Cross-Event Benchmarking</h3>
+      <p>Every event builds a baseline that sharpens the next one. Forecast accuracy compounds. Over time, your decisions stop being guesses and start being evidence.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how-section">
+  <div class="section-label">Deployment</div>
+  <h2 class="section-title">Deployed in hours. Invisible to attendees. Invaluable to you.</h2>
+  <div class="how-layout">
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="step-circle">01</div>
+        <div>
+          <h4>We Ship, You Place</h4>
+          <p>Pre-configured badges and gateways arrive ready. Gateways mount unobtrusively throughout your venue. We own the connectivity layer — venue Wi-Fi is never a dependency.</p>
+        </div>
+      </div>
+      <div class="how-step reveal d1">
+        <div class="step-circle">02</div>
+        <div>
+          <h4>Attendees Arrive Naturally</h4>
+          <p>Badges look and feel like standard lanyards. No app. No opt-in friction. Attendees behave naturally — which means your data reflects reality, not performance.</p>
+        </div>
+      </div>
+      <div class="how-step reveal d2">
+        <div class="step-circle">03</div>
+        <div>
+          <h4>Intelligence Streams Live</h4>
+          <p>Your dashboard shows crowd flow, room occupancy, session retention, catering status, and operational alerts — all updating in real time while the event runs.</p>
+        </div>
+      </div>
+      <div class="how-step reveal d3">
+        <div class="step-circle">04</div>
+        <div>
+          <h4>Data Compounds Event Over Event</h4>
+          <p>Each deployment adds to a historical baseline. Attendance forecasts sharpen. Operational waste shrinks. Every future event benefits from every past one.</p>
+        </div>
+      </div>
+    </div>
+    <div class="how-visual reveal d2">
+      <div class="how-visual-header">
+        <div class="win-dot win-red"></div>
+        <div class="win-dot win-gold"></div>
+        <div class="win-dot win-green"></div>
+        <div class="how-visual-header-label">Evential Live Dashboard</div>
+      </div>
+      <div class="dashboard-feed">
+        <div class="feed-item green-item" style="animation-delay:0.1s">
+          <i data-lucide="check-circle" class="feed-icon" style="width:15px;height:15px;"></i>
+          <div class="feed-text"><b>14 waitlist seats activated</b> — no-shows confirmed via check-in gap at 9:02 AM</div>
+          <div class="feed-time">9:04 AM</div>
+        </div>
+        <div class="feed-item alert-item" style="animation-delay:0.25s">
+          <i data-lucide="alert-triangle" class="feed-icon" style="width:15px;height:15px;"></i>
+          <div class="feed-text">Breakout B at <b>18% capacity</b> — Main Hall at 94%. Rebalance recommended.</div>
+          <div class="feed-time">1:47 PM</div>
+        </div>
+        <div class="feed-item alert-item" style="animation-delay:0.4s">
+          <i data-lucide="utensils" class="feed-icon" style="width:15px;height:15px;"></i>
+          <div class="feed-text">Catering station 2: <b>12 units remaining</b> — restock in ~22 min at current pace</div>
+          <div class="feed-time">12:38 PM</div>
+        </div>
+        <div class="feed-item green-item" style="animation-delay:0.55s">
+          <i data-lucide="users" class="feed-icon" style="width:15px;height:15px;"></i>
+          <div class="feed-text"><b>Networking peak detected</b> — 34 active badge-to-badge interactions in AMP Dining</div>
+          <div class="feed-time">12:14 PM</div>
+        </div>
+        <div class="feed-item" style="animation-delay:0.7s">
+          <i data-lucide="bar-chart-2" class="feed-icon" style="width:15px;height:15px;color:var(--text-muted)"></i>
+          <div class="feed-text">Session 3 retention: <b>81% stayed full duration</b> — highest engagement of the day</div>
+          <div class="feed-time">3:12 PM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="section-label">Who We Serve</div>
+  <h2 class="section-title">One platform. Four buyers. Completely different value.</h2>
+  <p class="section-sub">An organizer, an exhibitor, a venue operator, and an attendee don't share the same problem. Evential surfaces different intelligence depending on who's looking — because the right data at the right time is what makes it actionable.</p>
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('organizers',this)">Event Organizers</button>
+    <button class="tab-btn" onclick="switchTab('exhibitors',this)">Exhibitors & Sponsors</button>
+    <button class="tab-btn" onclick="switchTab('venues',this)">Venue Operators</button>
+    <button class="tab-btn" onclick="switchTab('attendees',this)">Attendees</button>
+  </div>
+
+  <div class="tab-panel active" id="tab-organizers">
+    <div class="tab-content">
+      <h3>Operational certainty, from pre-event to close.</h3>
+      <p>You're making $50,000 decisions based on registration counts and gut-feel. Evential gives you verified attendance forecasts, live room-by-room visibility, and the data to stop over-preparing and under-delivering — at every event you run.</p>
+      <div class="feature-list">
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Predictive no-show modeling reduces catering waste by up to 30%</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Real-time waitlist activation fills seats the moment no-shows confirm</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Live crowd heat maps surface underutilized spaces before sessions end</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Staff allocation driven by live density data, not pre-event estimates</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Post-event reports that answer "why" — not just what happened</div>
+      </div>
+    </div>
+    <div class="tab-visual">
+      <div class="metric-row"><span class="metric-label">Predicted Attendance</span><span class="metric-value mv-green">807 / 975 reg.</span></div>
+      <div class="metric-row"><span class="metric-label">Catering Recommended</span><span class="metric-value mv-gold">643 meals</span></div>
+      <div class="metric-row"><span class="metric-label">Waitlist Seats Activated</span><span class="metric-value mv-green">142 of 300</span></div>
+      <div class="metric-row"><span class="metric-label">Breakout B Occupancy</span><span class="metric-value mv-red">18% — Alert Active</span></div>
+      <div class="metric-row"><span class="metric-label">Projected Food Waste</span><span class="metric-value mv-green">↓ 74% vs. prior event</span></div>
+      <div class="mini-bar-section">
+        <div class="mini-bar-label">Live Session Attendance</div>
+        <div class="bar-row"><div class="bar-name">Main Hall</div><div class="bar-track"><div class="bar-fill gold" data-w="88%" style="width:0%"></div></div></div>
+        <div class="bar-row"><div class="bar-name">Enclave</div><div class="bar-track"><div class="bar-fill" data-w="61%" style="width:0%"></div></div></div>
+        <div class="bar-row"><div class="bar-name">Breakout B</div><div class="bar-track"><div class="bar-fill dim" data-w="18%" style="width:0%"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-exhibitors">
+    <div class="tab-content">
+      <h3>Prove your booth ROI. Finally.</h3>
+      <p>You spent $15,000 on a booth. You came home with 200 business cards and a bunch of handshakes. Evential tells you exactly how many people engaged, for how long, whether they came back — and pipes that directly into your CRM without a single manual scan.</p>
+      <div class="feature-list">
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Booth dwell time and return visit rates per attendee</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Automatic lead capture — proximity event creates CRM record instantly</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Salesforce and HubSpot integration, zero manual entry required</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Professional profile enrichment via LinkedIn</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Session-to-booth conversion: did your talk actually drive floor traffic?</div>
+      </div>
+    </div>
+    <div class="tab-visual">
+      <div class="metric-row"><span class="metric-label">Unique Booth Visitors</span><span class="metric-value mv-green">84 attendees</span></div>
+      <div class="metric-row"><span class="metric-label">Avg. Dwell Time</span><span class="metric-value mv-green">3m 42s</span></div>
+      <div class="metric-row"><span class="metric-label">Return Visits</span><span class="metric-value mv-green">31 (37%)</span></div>
+      <div class="metric-row"><span class="metric-label">CRM Leads Auto-Created</span><span class="metric-value mv-green">84</span></div>
+      <div class="metric-row"><span class="metric-label">Post-Keynote Traffic Spike</span><span class="metric-value mv-gold">+340%</span></div>
+      <div class="metric-row"><span class="metric-label">Cost Per Qualified Lead</span><span class="metric-value mv-green">↓ 61% vs. prior show</span></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-venues">
+    <div class="tab-content">
+      <h3>Permanent infrastructure. Compounding value.</h3>
+      <p>You host dozens of events a year. Right now, every one starts from zero. Evential's permanent venue deployment means every event that books your space activates the intelligence layer instantly — and you accumulate a utilization dataset no other venue can offer clients.</p>
+      <div class="feature-list">
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Permanent gateway installation mapped to your floor plan</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Cross-event utilization analytics — identify chronically underused spaces</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>A genuine differentiator when organizers are choosing between venues</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>HVAC and capacity optimization from real-time density data</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Annual venue subscription — lowest cost-per-event model we offer</div>
+      </div>
+    </div>
+    <div class="tab-visual">
+      <div class="mini-bar-section">
+        <div class="mini-bar-label">12-Month Room Utilization</div>
+        <div class="bar-row"><div class="bar-name">Main Hall</div><div class="bar-track"><div class="bar-fill gold" data-w="88%" style="width:0%"></div></div></div>
+        <div class="bar-row"><div class="bar-name">Breakout A</div><div class="bar-track"><div class="bar-fill" data-w="61%" style="width:0%"></div></div></div>
+        <div class="bar-row"><div class="bar-name">Breakout B</div><div class="bar-track"><div class="bar-fill dim" data-w="34%" style="width:0%"></div></div></div>
+        <div class="bar-row"><div class="bar-name">Patio</div><div class="bar-track"><div class="bar-fill dim" data-w="22%" style="width:0%"></div></div></div>
+      </div>
+      <div class="metric-row"><span class="metric-label">Avg. Events / Month</span><span class="metric-value mv-green">7.2</span></div>
+      <div class="metric-row"><span class="metric-label">Breakout B Flag</span><span class="metric-value mv-red">Chronic Underuse — Reconfigure</span></div>
+      <div class="metric-row"><span class="metric-label">Peak Density Pattern</span><span class="metric-value mv-gold">Main Hall — Fri 2-4 PM</span></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-attendees">
+    <div class="tab-content">
+      <h3>Better connections, seamlessly.</h3>
+      <p>You came to network and discover. Evential works silently in the background — you never notice it's there. What you do notice: it's easier to find the right people, session recommendations actually matter, and meaningful conversations happen naturally. The technology disappears. The connections don't.</p>
+      <div class="feature-list">
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Smart session recommendations based on who else is attending</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Discover attendees with shared interests without asking</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>After the event, relive the event's social graph — every meaningful interaction mapped</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Connect with attendees who visited booths or sessions you care about</div>
+        <div class="feature-item"><i data-lucide="arrow-right" class="feature-arrow" style="width:14px;height:14px;"></i>Zero friction — no badges to scan, no forms to fill, no QR codes to chase</div>
+      </div>
+    </div>
+    <div class="tab-visual">
+      <div class="metric-row"><span class="metric-label">Sessions You'll Love</span><span class="metric-value mv-green">6 matched sessions</span></div>
+      <div class="metric-row"><span class="metric-label">Attendees With Shared Interests</span><span class="metric-value mv-green">23 discovered</span></div>
+      <div class="metric-row"><span class="metric-label">Conversations You Had</span><span class="metric-value mv-green">8 interactions mapped</span></div>
+      <div class="metric-row"><span class="metric-label">New Connections to Reconnect</span><span class="metric-value mv-green">5 people</span></div>
+      <div class="metric-row"><span class="metric-label">Sessions Attended</span><span class="metric-value mv-gold">4 of 6 matched</span></div>
+      <div class="mini-bar-section">
+        <div class="mini-bar-label">Your Event Interactions</div>
+        <div class="bar-row"><div class="bar-name" style="width:fit-content;">Booth Conversations</div><div class="bar-track"><div class="bar-fill gold" data-w="75%" style="width:0%"></div></div></div>
+        <div class="bar-row"><div class="bar-name" style="width:fit-content;">Session Attendance</div><div class="bar-track"><div class="bar-fill" data-w="67%" style="width:0%"></div></div></div>
+        <div class="bar-row"><div class="bar-name" style="width:fit-content;">Networking Time</div><div class="bar-track"><div class="bar-fill" data-w="89%" style="width:0%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="data-section" id="data">
+  <div class="section-label">The Data Layer</div>
+  <h2 class="section-title">Four dimensions of event data that have never been measured simultaneously.</h2>
+  <p class="section-sub">This is not a survey tool or a check-in app. It is the first platform designed to capture what actually happens inside a live event — physical, social, operational, and predictive — all at once.</p>
+  <div class="data-layout">
+    <div class="data-card dc-physical reveal">
+      <div class="data-card-tag t-physical">Physical Intelligence</div>
+      <h4>Movement & Spatial Analytics</h4>
+      <p>Centimeter-precision positioning via BLE + UWB. Dwell time by zone, crowd flow direction, bottleneck detection, real-time occupancy per room. The event mapped as it moves.</p>
+      <div class="chip-row">
+        <span class="chip">Attendee Location</span><span class="chip">Staff Routing</span><span class="chip">Queue Depth</span><span class="chip">Crowd Flow</span>
+      </div>
+    </div>
+    <div class="data-card dc-interaction reveal d1">
+      <div class="data-card-tag t-interaction">Interaction Intelligence</div>
+      <h4>Networking & Engagement Graph</h4>
+      <p>Badge-to-badge proximity creates a live social graph of the event. Session retention depth, post-session clustering, and conversation density — the human layer, finally quantified.</p>
+      <div class="chip-row">
+        <span class="chip">P2P Interactions</span><span class="chip">Session Retention</span><span class="chip">Networking Density</span><span class="chip">Booth Conversion</span>
+      </div>
+    </div>
+    <div class="data-card dc-crm reveal d2">
+      <div class="data-card-tag t-crm">Identity Intelligence</div>
+      <h4>Professional Profile Enrichment</h4>
+      <p>Optional LinkedIn integration enriches physical signals with professional identity. Every interaction becomes a qualified lead. CRM records update automatically. No scanning. No forms.</p>
+      <div class="chip-row">
+        <span class="chip">LinkedIn Enrichment</span><span class="chip">Salesforce Sync</span><span class="chip">HubSpot Integration</span><span class="chip">Lead Scoring</span>
+      </div>
+    </div>
+    <div class="data-card dc-ops reveal d3">
+      <div class="data-card-tag t-ops">Operational Intelligence</div>
+      <h4>Inventory, Assets & Environment</h4>
+      <p>Tagged catering containers alert when running low. Equipment leaves geofenced zones — you know immediately. CO₂ and noise sensors flag discomfort before attendees start drifting.</p>
+      <div class="chip-row">
+        <span class="chip">Catering Depletion</span><span class="chip">Asset Tracking</span><span class="chip">CO₂ Alerts</span><span class="chip">Noise Mapping</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof-section" id="proof">
+  <div class="proof-layout">
+    <div>
+  <div class="section-label">Field Validation</div>
+  <h2 class="section-title">Deployed in the real world. Data-validated from day one.</h2>
+  <p class="section-sub">Evential's experimental Badge-Gateway system ran at a live multi-track summit — under real constraints, shared public Wi-Fi, and zero advance venue testing. Even in that configuration, the intelligence was real.</p>
+  <br><br>
+      <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.85;margin-bottom:1.4rem;font-weight:300;">With five gateways and a constrained configuration, the system collected <strong style="color:var(--text-primary);">1,485 data points per active badge</strong> — one signal every 4.6 seconds — over a 7.5-hour continuous session. Even in that configuration, the signal was undeniable: a 39% no-show rate with a measurable geographic predictor, $507 in preventable food waste, and persistent spatial asymmetry between two parallel session rooms that organizers had never quantified before.</p>
+      <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.85;margin-bottom:2rem;font-weight:300;">Our production architecture builds on every lesson from that deployment — private connectivity, tamper-resistant hardware, and a full real-time dashboard. The intelligence was real from day one. The infrastructure now matches our findings.</p>
+      <a href="/case-study-1.pdf" class="btn-primary" style="display:inline-flex;">
+        Read the Full Case Study <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+    <div>
+      <div class="proof-image-block" style="margin-bottom:18px;">
+        <img src="pic1.JPG" class="img-ph reveal d1" style="height:220px;width:100%;object-fit:cover;">
+        </div>
+      <div class="proof-stat-grid reveal d2">
+        <div class="proof-stat"><div class="proof-stat-num">1,485</div><div class="proof-stat-lbl">Data Points Per Badge</div></div>
+        <div class="proof-stat"><div class="proof-stat-num">4.6s</div><div class="proof-stat-lbl">Signal Frequency</div></div>
+        <div class="proof-stat"><div class="proof-stat-num">39%</div><div class="proof-stat-lbl">No-Show Rate Identified</div></div>
+        <div class="proof-stat"><div class="proof-stat-num">$507</div><div class="proof-stat-lbl">Preventable Waste Found</div></div>
+        <div class="proof-stat"><div class="proof-stat-num">7.5h</div><div class="proof-stat-lbl">Continuous Tracking</div></div>
+        <div class="proof-stat"><div class="proof-stat-num">5</div><div class="proof-stat-lbl">Gateways, Full Coverage</div></div>
+      </div>
+      <div class="proof-image-block">
+        <div class="proof-image-row">
+          <img src="pic2.JPG" class="img-ph reveal d3" style="height:200px; width: 100%; object-fit: cover; ">
+            
+          <img src="pic4.JPG" class="img-ph reveal d4" style="height:200px; width: 100%; object-fit: cover; background-position: top;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vision-section section-timeline" id="vision">
+  <div class="section-label">Where We're Going</div>
+  <h2 class="section-title" style="text-align: center;">Built for today. Architected for the industry we intend to define.</h2>
+  <p class="section-sub" style="text-align: center;">The events industry runs a $1.5 trillion economy on spreadsheets and assumptions. We're building the intelligence infrastructure that changes that — deliberately, and with a data moat that gets harder to close every year.</p>
+  <div class="vision-rail">
+    <div class="vision-item now">
+      <div class="vision-year">Phase I</div>
+      <div class="vision-node"></div>
+      <div class="vision-content">
+        <h4>Real-Time Event Intelligence — Available Now</h4>
+        <p>Badge-gateway deployments at conferences, trade shows, and corporate events. Per-event pricing. Physical analytics, attendance forecasting, food waste reduction, and networking graphs. Deployed in hours, invisible to attendees.</p>
+      </div>
+    </div>
+    <div class="vision-item">
+      <div class="vision-year">Phase II</div>
+      <div class="vision-node"></div>
+      <div class="vision-content">
+        <h4>Exhibitor & Sponsor Intelligence</h4>
+        <p>Booth ROI dashboards, automatic CRM lead creation, and LinkedIn enrichment. The first platform where sponsorship dollars are measured in real time — not estimated after the event ends.</p>
+      </div>
+    </div>
+    <div class="vision-item">
+      <div class="vision-year">Phase III</div>
+      <div class="vision-node"></div>
+      <div class="vision-content">
+        <h4>Permanent Venue Infrastructure</h4>
+        <p>Evential gateways installed as permanent fixtures at convention centers and event spaces. Every event that books the venue activates full intelligence automatically — zero deployment overhead, maximum data density.</p>
+      </div>
+    </div>
+    <div class="vision-item">
+      <div class="vision-year">Phase IV</div>
+      <div class="vision-node"></div>
+      <div class="vision-content">
+        <h4>The Complete Event Platform</h4>
+        <p>Registration, logistics, live intelligence, CRM integration, and automated operations — unified. Events that adapt to what's actually happening, not what was planned three weeks ago in a spreadsheet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="traction-section">
+  <div class="traction-inner">
+    <div class="traction-label-col">
+      <div class="traction-eyebrow">For Investors</div>
+      <div class="traction-heading">A category that doesn't exist yet. A team already in the field.</div>
+      <div class="traction-sub">Pre-seed. Field-validated. Building the data moat no late entrant can replicate.</div>
+    </div>
+    <div class="traction-stats-col">
+      <div class="traction-stat">
+        <div class="traction-num">$1.5<span>T</span></div>
+        <div class="traction-lbl">Global Events Industry</div>
+      </div>
+      <div class="traction-stat">
+        <div class="traction-num">First<span>.</span></div>
+        <div class="traction-lbl">Real-Time Physical Event Intelligence Platform</div>
+      </div>
+      <div class="traction-stat">
+        <div class="traction-num">Per<span>-</span>Event</div>
+        <div class="traction-lbl">Low-Friction Entry. High-Retention Data Model.</div>
+      </div>
+      <div class="traction-stat">
+        <div class="traction-num">Live<span>.</span></div>
+        <div class="traction-lbl">Field-Validated. Real Deployment. Real Numbers.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="privacy" style="background:var(--bg-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-label">Data & Privacy</div>
+  <h2 class="section-title">Built with data responsibility at the foundation, not bolted on after.</h2>
+  <p class="section-sub">We know the first question any enterprise buyer or legal team asks. Here are the answers.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3rem;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;" class="privacy-grid">
+
+    <div style="background:var(--bg-dark);padding:2rem;">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <i data-lucide="shield" style="width:20px;height:20px;color:var(--accent-gold);flex-shrink:0;"></i>
+        <h4 style="font-size:0.95rem;font-weight:700;">Attendee Consent</h4>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;">Badges are disclosed as standard event equipment. Organizers control consent language at registration. All spatial data is anonymized and de-identified at the point of collection — no personal movement profiles are created without explicit opt-in.</p>
+    </div>
+
+    <div style="background:var(--bg-dark);padding:2rem;border-left:1px solid var(--border);border-right:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <i data-lucide="lock" style="width:20px;height:20px;color:var(--accent-gold);flex-shrink:0;"></i>
+        <h4 style="font-size:0.95rem;font-weight:700;">Data Ownership</h4>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;">Your event data is yours. Evential does not sell, license, or share individual event data with third parties. Aggregated cross-event benchmarks are opt-in only. Data is encrypted in transit and at rest. You can request full deletion at any time.</p>
+    </div>
+
+    <div style="background:var(--bg-dark);padding:2rem;">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <i data-lucide="file-check" style="width:20px;height:20px;color:var(--accent-gold);flex-shrink:0;"></i>
+        <h4 style="font-size:0.95rem;font-weight:700;">Compliance</h4>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;">Evential is designed to support GDPR and CCPA compliance obligations. SOC 2 certification is in progress. Our data processing agreements are available on request for enterprise procurement teams. We work alongside your legal and security review.</p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+    <i data-lucide="help-circle" style="width:16px;height:16px;color:var(--text-muted);flex-shrink:0;"></i>
+    <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;flex:1;"><strong style="color:var(--text-secondary);">Common questions:</strong> Can attendees opt out? Yes — organizers can configure opt-out at check-in. What if a badge is removed? Tracking stops; no inference is made. Who can see the data? Only authorized event staff through your Evential dashboard. Is location data stored permanently? No — raw location streams are processed and discarded; only aggregated analytics are retained.</p>
+  </div>
+</section>
+
+<section style="padding:64px 5%;border-bottom:1px solid var(--border);">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto;text-align:center;" class="buttons-grid">
+
+    <a href="#proof" style="text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:0.75rem;transition:all 0.25s;" onmouseover="this.style.borderColor='rgba(172,197,225,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(172,197,225,0.11)';this.style.transform='translateY(0)'">
+      <i data-lucide="file-text" style="width:28px;height:28px;color:var(--accent-gold);"></i>
+      <div style="font-family:'Montserrat Alternates',sans-serif;font-size:0.9rem;font-weight:700;color:var(--text-primary);">Read the Case Study</div>
+      <div style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;">See real deployment numbers from our first live event. No sign-up required, just the data.</div>
+    </a>
+
+    <div style="text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:0.75rem;transition:all 0.25s;position:relative;overflow:hidden;" onmouseover="this.style.borderColor='rgba(172,197,225,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(172,197,225,0.11)';this.style.transform='translateY(0)'">
+      <div style="position:absolute;top:0;left:0;background:#8E181A;color:#eef2f7;padding:0.25rem 0.6rem;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border-radius:0 0 4px 0;">coming soon</div>
+      <i data-lucide="layout-dashboard" style="width:28px;height:28px;color:var(--accent-gold);"></i>
+      <div style="font-family:'Montserrat Alternates',sans-serif;font-size:0.9rem;font-weight:700;color:var(--text-primary);">See a Sample Dashboard</div>
+      <div style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;">Request a walkthrough of what the live intelligence view looks like for your event type.</div>
+    </div>
+
+    <div style="text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:0.75rem;transition:all 0.25s;position:relative;overflow:hidden;" onmouseover="this.style.borderColor='rgba(172,197,225,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(172,197,225,0.11)';this.style.transform='translateY(0)'">
+      <div style="position:absolute;top:0;left:0;background:#8E181A;color:#eef2f7;padding:0.25rem 0.6rem;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border-radius:0 0 4px 0;">coming soon</div>
+      <i data-lucide="calculator" style="width:28px;height:28px;color:var(--accent-gold);"></i>
+      <div style="font-family:'Montserrat Alternates',sans-serif;font-size:0.9rem;font-weight:700;color:var(--text-primary);">Estimate Your Savings</div>
+      <div style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;">Tell us your event size and we'll model out the waste reduction and ROI specific to your events.</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section" id="pilot">
+  <div class="section-label" style="justify-content:center;">Get Started</div>
+  <h2>Request a pilot deployment.<br>We're selective for a reason.</h2>
+  <p>We're partnering with a small number of events in 2026 to build the reference dataset that defines this category. Trade shows, corporate conferences, multi-day summits — if you run serious events, let's talk.</p>
+  <div class="cta-form">
+    <a href="https://calendly.com/contact-evential/30min?month=2026-03" target="_blank" class="btn-primary">
+      Request Pilot <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+    </a>
+  </div>
+  <p class="cta-note">For investors: <a href="mailto:contact@evential.co">contact@evential.co</a> &nbsp;·&nbsp; Pre-seed. Raising now.</p>
+</section>
+
+<footer>
+  <div class="footer-logo">EVENTIAL</div>
+  <ul class="footer-links">
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="#who">Who We Serve</a></li>
+    <li><a href="#proof">Case Study</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="mailto:hello@evential.co">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Evential, LLC. All rights reserved.</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  document.addEventListener('DOMContentLoaded', function() {
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    setTimeout(animateBars, 80);
+  }
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  function animateBars() {
+    document.querySelectorAll('.bar-fill[data-w]').forEach(bar => {
+      const w = bar.dataset.w;
+      bar.style.width = '0%';
+      requestAnimationFrame(() => setTimeout(() => { bar.style.width = w; }, 60));
+    });
+  }
+
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { animateBars(); barObs.unobserve(e.target); } });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.tab-visual, .how-visual').forEach(el => barObs.observe(el));
+
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 50 ? 'rgba(12,20,32,0.97)' : 'rgba(12,20,32,0.88)';
+  });
+
+  window.submitPilot = function() {
+    const inp = document.getElementById('pilot-email');
+    if (inp.value && inp.value.includes('@')) {
+      inp.placeholder = "We'll be in touch shortly ✓";
+      
+      inp.value = '';
+      inp.style.borderColor = '#2eb87a';
+      inp.style.color = '#2eb87a';
+    } else {
+      inp.style.borderColor = '#8E181A';
+      inp.placeholder = 'Please enter a valid email';
+    }
+  };
+
+  window.switchTab = function(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    setTimeout(animateBars, 80);
+  };
+
+  });
+</script>
+</body>
