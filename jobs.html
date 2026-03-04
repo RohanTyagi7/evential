@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Careers at Evential — Join the Team</title>
+  <title>Jobs at Evential — Join the Team</title>
   <meta name="description" content="Join Evential as a Founding Engineer. We're hiring AI/ML, Embedded Systems, and Full-Stack engineers at Purdue University." />
   <meta name="keywords" content="careers, jobs, founding engineer, AI, embedded systems, full-stack, startup jobs" />
-  <meta property="og:title" content="Careers at Evential" />
+  <meta property="og:title" content="Jobs at Evential" />
   <meta property="og:description" content="Join our founding team and help build the future of event intelligence." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://evential.co/jobs" />
@@ -127,12 +127,24 @@
     .footer-links a:hover{color:var(--text-secondary)}
     .footer-copy{font-size:0.7rem;color:var(--text-muted)}
 
+    @media(max-width:900px){
+      .nav-links{display:none}
+      footer{flex-direction:column;align-items:flex-start}
+      .footer-logo{width:100%}
+      .footer-links{width:100%;flex-direction:column;gap:0.8rem;margin:1rem 0}
+      .footer-copy{width:100%}
+    }
     @media(max-width:768px){
       .job-content{grid-template-columns:1fr;gap:1.5rem}
       .job-header{flex-direction:column}
-      nav{padding:0 3%}
-      .nav-links{gap:1rem;font-size:0.65rem}
-      section{padding:60px 3%}
+      nav{padding:0 5%}
+      section{padding:60px 5%}
+    }
+    @media(max-width:600px){
+      section{padding:48px 5%}
+      .hero{padding:100px 5% 60px}
+      .btn-row{flex-direction:column;width:100%}
+      .btn-primary,.btn-ghost{width:100%;justify-content:center;text-align:center}
     }
   </style>
 </head>
@@ -147,8 +159,8 @@
     <li><a href="/#who">Who We Serve</a></li>
     <li><a href="/#proof">Case Study</a></li>
     <li><a href="/#privacy">Privacy</a></li>
-    <li><a href="jobs.html" style="color:var(--accent-gold)">Careers</a></li>
-    <li><a href="mailto:hello@evential.co" class="nav-cta">Contact</a></li>
+    <li><a href="jobs.html" style="color:var(--accent-gold)">Jobs</a></li>
+    <li><a href="mailto:contact@evential.co" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
@@ -402,7 +414,7 @@
     <li><a href="/#who">Who We Serve</a></li>
     <li><a href="/#proof">Case Study</a></li>
     <li><a href="/#privacy">Privacy</a></li>
-    <li><a href="jobs.html">Careers</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
     <li><a href="mailto:hello@evential.co">Contact</a></li>
   </ul>
   <div class="footer-copy">© 2026 Evential, LLC. All rights reserved.</div>
