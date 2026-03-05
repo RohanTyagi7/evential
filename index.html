@@ -16,10 +16,8 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Load fonts async to eliminate render-blocking -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700;800;900&family=Merriweather+Sans:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700;800;900&family=Merriweather+Sans:wght@300;400;600&display=swap" rel="stylesheet" /></noscript>
-  <!-- Single Lucide script, deferred so it doesn't block rendering -->
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js" defer></script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="https://cdn.jsdelivr.net" defer></script>
@@ -31,7 +29,7 @@
       --accent-navy:#3D406A;--accent-rose:#6A3D5A;--accent-red:#8E181A;
       --green:#2eb87a;--red-alert:#e05a5c;
       --bg-dark:#0c1420;--bg-mid:#101c2c;--bg-card:#152236;
-      --text-primary:#eef2f7;--text-secondary:#8aaac8;--text-muted:#526d88;
+      --text-primary:#eef2f7;--text-secondary:#8aaac8;--text-muted:#6b8aaa;
       --border:rgba(172,197,225,0.11);--border-strong:rgba(172,197,225,0.2);
       --glow:rgba(172,197,225,0.05);
     }
@@ -309,7 +307,7 @@
     <li><a href="#privacy">Privacy</a></li>
     <li><a href="#vision">Vision</a></li>
     <li><a href="/jobs">Jobs</a></li>
-    <li><a href="#pilot" class="nav-cta">Request a Pilot</a></li>
+    <li><a href="#pilot" class="nav-cta" aria-label="Request a Pilot — navigate to form">Request a Pilot</a></li>
   </ul>
 </nav>
 
@@ -640,7 +638,7 @@
   <div class="data-layout">
     <div class="data-card dc-physical reveal">
       <div class="data-card-tag t-physical">Physical Intelligence</div>
-      <h4>Movement & Spatial Analytics</h4>
+      <h3>Movement & Spatial Analytics</h3>
       <p>Centimeter-precision positioning via BLE + UWB. Dwell time by zone, crowd flow direction, bottleneck detection, real-time occupancy per room. The event mapped as it moves.</p>
       <div class="chip-row">
         <span class="chip">Attendee Location</span><span class="chip">Staff Routing</span><span class="chip">Queue Depth</span><span class="chip">Crowd Flow</span>
@@ -648,7 +646,7 @@
     </div>
     <div class="data-card dc-interaction reveal d1">
       <div class="data-card-tag t-interaction">Interaction Intelligence</div>
-      <h4>Networking & Engagement Graph</h4>
+      <h3>Networking & Engagement Graph</h3>
       <p>Badge-to-badge proximity creates a live social graph of the event. Session retention depth, post-session clustering, and conversation density — the human layer, finally quantified.</p>
       <div class="chip-row">
         <span class="chip">P2P Interactions</span><span class="chip">Session Retention</span><span class="chip">Networking Density</span><span class="chip">Booth Conversion</span>
@@ -656,7 +654,7 @@
     </div>
     <div class="data-card dc-crm reveal d2">
       <div class="data-card-tag t-crm">Identity Intelligence</div>
-      <h4>Professional Profile Enrichment</h4>
+      <h3>Professional Profile Enrichment</h3>
       <p>Optional LinkedIn integration enriches physical signals with professional identity. Every interaction becomes a qualified lead. CRM records update automatically. No scanning. No forms.</p>
       <div class="chip-row">
         <span class="chip">LinkedIn Enrichment</span><span class="chip">Salesforce Sync</span><span class="chip">HubSpot Integration</span><span class="chip">Lead Scoring</span>
@@ -664,7 +662,7 @@
     </div>
     <div class="data-card dc-ops reveal d3">
       <div class="data-card-tag t-ops">Operational Intelligence</div>
-      <h4>Inventory, Assets & Environment</h4>
+      <h3>Inventory, Assets & Environment</h3>
       <p>Tagged catering containers alert when running low. Equipment leaves geofenced zones — you know immediately. CO₂ and noise sensors flag discomfort before attendees start drifting.</p>
       <div class="chip-row">
         <span class="chip">Catering Depletion</span><span class="chip">Asset Tracking</span><span class="chip">CO₂ Alerts</span><span class="chip">Noise Mapping</span>
@@ -718,7 +716,7 @@
       <div class="vision-year">Phase I</div>
       <div class="vision-node"></div>
       <div class="vision-content">
-        <h4>Real-Time Event Intelligence — Available Now</h4>
+        <h3>Real-Time Event Intelligence — Available Now</h3>
         <p>Badge-gateway deployments at conferences, trade shows, and corporate events. Per-event pricing. Physical analytics, attendance forecasting, food waste reduction, and networking graphs. Deployed in hours, invisible to attendees.</p>
       </div>
     </div>
@@ -726,7 +724,7 @@
       <div class="vision-year">Phase II</div>
       <div class="vision-node"></div>
       <div class="vision-content">
-        <h4>Exhibitor & Sponsor Intelligence</h4>
+        <h3>Exhibitor & Sponsor Intelligence</h3>
         <p>Booth ROI dashboards, automatic CRM lead creation, and LinkedIn enrichment. The first platform where sponsorship dollars are measured in real time — not estimated after the event ends.</p>
       </div>
     </div>
@@ -734,7 +732,7 @@
       <div class="vision-year">Phase III</div>
       <div class="vision-node"></div>
       <div class="vision-content">
-        <h4>Permanent Venue Infrastructure</h4>
+        <h3>Permanent Venue Infrastructure</h3>
         <p>Evential gateways installed as permanent fixtures at convention centers and event spaces. Every event that books the venue activates full intelligence automatically — zero deployment overhead, maximum data density.</p>
       </div>
     </div>
@@ -742,7 +740,7 @@
       <div class="vision-year">Phase IV</div>
       <div class="vision-node"></div>
       <div class="vision-content">
-        <h4>The Complete Event Platform</h4>
+        <h3>The Complete Event Platform</h3>
         <p>Registration, logistics, live intelligence, CRM integration, and automated operations — unified. Events that adapt to what's actually happening, not what was planned three weeks ago in a spreadsheet.</p>
       </div>
     </div>
@@ -787,7 +785,7 @@
     <div style="background:var(--bg-dark);padding:2rem;">
       <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
         <i data-lucide="shield" style="width:20px;height:20px;color:var(--accent-gold);flex-shrink:0;"></i>
-        <h4 style="font-size:0.95rem;font-weight:700;">Attendee Consent</h4>
+        <h3 style="font-size:0.95rem;font-weight:700;">Attendee Consent</h3>
       </div>
       <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;">Badges are disclosed as standard event equipment. Organizers control consent language at registration. All spatial data is anonymized and de-identified at the point of collection — no personal movement profiles are created without explicit opt-in.</p>
     </div>
@@ -795,7 +793,7 @@
     <div style="background:var(--bg-dark);padding:2rem;border-left:1px solid var(--border);border-right:1px solid var(--border);">
       <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
         <i data-lucide="lock" style="width:20px;height:20px;color:var(--accent-gold);flex-shrink:0;"></i>
-        <h4 style="font-size:0.95rem;font-weight:700;">Data Ownership</h4>
+        <h3 style="font-size:0.95rem;font-weight:700;">Data Ownership</h3>
       </div>
       <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;">Your event data is yours. Evential does not sell, license, or share individual event data with third parties. Aggregated cross-event benchmarks are opt-in only. Data is encrypted in transit and at rest. You can request full deletion at any time.</p>
     </div>
@@ -803,7 +801,7 @@
     <div style="background:var(--bg-dark);padding:2rem;">
       <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
         <i data-lucide="file-check" style="width:20px;height:20px;color:var(--accent-gold);flex-shrink:0;"></i>
-        <h4 style="font-size:0.95rem;font-weight:700;">Compliance</h4>
+        <h3 style="font-size:0.95rem;font-weight:700;">Compliance</h3>
       </div>
       <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;">Evential is designed to support GDPR and CCPA compliance obligations. SOC 2 certification is in progress. Our data processing agreements are available on request for enterprise procurement teams. We work alongside your legal and security review.</p>
     </div>
@@ -869,12 +867,10 @@
 </footer>
 
 <script>
-  // Lucide icons: init after defer script loads
   function initLucide() {
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     } else {
-      // defer means script loads after DOMContentLoaded; retry briefly
       setTimeout(initLucide, 50);
     }
   }
@@ -935,7 +931,6 @@
       if (panel) panel.classList.add('active');
       if (btn) btn.classList.add('active');
       setTimeout(animateBars, 80);
-      // Re-init lucide icons in newly shown tab panel
       if (typeof lucide !== 'undefined') lucide.createIcons();
     };
   });
