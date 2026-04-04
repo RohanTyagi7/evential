@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Evential</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0B0F14;
+            --bg-card: #121417;
+            --border: #1F2933;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B3B8;
+            --accent: #3B82F6;
+            --success: #22C55E;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            padding: 80px 0;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .last-updated { 
+            font-family: 'Space Mono', monospace; 
+            font-size: 0.85rem; 
+            color: var(--accent); 
+            margin-bottom: 40px; 
+            display: block;
+        }
+
+        h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 40px; }
+        
+        strong { color: var(--text-primary); }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Website</a>
+        <div class="card">
+            <h1>Privacy Policy</h1>
+            <span class="last-updated">LAST UPDATED: APRIL 4, 2026</span>
+
+            <p>At <strong>Evential</strong>, we take privacy seriously. This policy outlines how we handle data within our event intelligence platform.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>We collect information necessary to provide real-time event analytics and qualified lead reports:</p>
+            <ul>
+                <li><strong>Account Data:</strong> Names, emails, and organization details provided during registration.</li>
+                <li><strong>Attendee Data:</strong> Information provided by organizers, including names, titles, and company affiliations.</li>
+                <li><strong>Engagement Data:</strong> Proximity-based data from badges used to track movement, dwell times, and booth visits.</li>
+            </ul>
+
+            <h2>2. Data Anonymization & Retention</h2>
+            <p>Our architecture is built on "Privacy by Design" principles:</p>
+            <ul>
+                <li><strong>Automated Scrubbing:</strong> Attendee PII is automatically deleted <strong>30 days</strong> after an event concludes by default (adjustable by organizers).</li>
+                <li><strong>Permanent Anonymization:</strong> Spatial movement data is permanently stripped of identifiers once the retention window expires.</li>
+                <li><strong>Separation:</strong> Movement data and personal identities are stored in architecturally separate databases.</li>
+            </ul>
+
+            <h2>3. How We Use Data</h2>
+            <p>Data is used exclusively to:</p>
+            <ul>
+                <li>Generate the Evential Dashboard analytics.</li>
+                <li>Produce qualified lead reports for event sponsors.</li>
+                <li>Provide anonymized platform benchmarks to help organizers improve event ROI.</li>
+            </ul>
+
+            <h2>4. Security</h2>
+            <p>We utilize industry-standard security measures, including <strong>TLS 1.3</strong> encryption for data in transit and <strong>AES-256</strong> encryption for data at rest via Firebase infrastructure.</p>
+
+            <h2>5. Contact</h2>
+            <p>For data access requests or questions regarding your privacy, contact <a href="mailto:privacy@evential.co" style="color: var(--accent);">privacy@evential.co</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

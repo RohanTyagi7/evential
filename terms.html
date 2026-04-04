@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Evential</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0B0F14;
+            --bg-card: #121417;
+            --border: #1F2933;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B3B8;
+            --accent: #3B82F6;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            padding: 80px 0;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .last-updated { 
+            font-family: 'Space Mono', monospace; 
+            font-size: 0.85rem; 
+            color: var(--accent); 
+            margin-bottom: 40px; 
+            display: block;
+        }
+
+        h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 40px; }
+        
+        strong { color: var(--text-primary); }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Website</a>
+        <div class="card">
+            <h1>Terms of Service</h1>
+            <span class="last-updated">EFFECTIVE DATE: APRIL 4, 2026</span>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By using <strong>evential.co</strong>, you agree to these terms. If you are using this on behalf of an organization, you represent that you have the authority to bind that organization to these terms.</p>
+
+            <h2>2. Service Description</h2>
+            <p>Evential provides event intelligence software including floor plan design, attendee proximity tracking, and lead generation reporting.</p>
+
+            <h2>3. Organizer Responsibilities</h2>
+            <p>Organizers are responsible for:</p>
+            <ul>
+                <li>Maintaining account security and password confidentiality.</li>
+                <li><strong>Attendee Consent:</strong> Obtaining necessary legal consent from attendees for tracking and data sharing.</li>
+                <li>Ensuring all uploaded attendee data complies with local privacy laws.</li>
+            </ul>
+
+            <h2>4. Payments & Billing</h2>
+            <p>We use <strong>Stripe</strong> for all payment processing. By adding a card to your account, you authorize Evential to charge for subscription fees and lead report generation costs. All sales of digital lead reports are final once downloaded.</p>
+
+            <h2>5. Intellectual Property</h2>
+            <p>The Evential platform, including its proprietary analytics engines and dashboard interface, is the exclusive property of Evential. You retain ownership of your event-specific data.</p>
+
+            <h2>6. Limitation of Liability</h2>
+            <p>Evential is provided "as is." We do not guarantee 100% accuracy in proximity tracking due to variables in venue environments (e.g., signal interference). We are not liable for any business decisions made based on platform analytics.</p>
+
+            <h2>7. Termination</h2>
+            <p>We reserve the right to suspend accounts that violate these terms or participate in fraudulent activities. You may delete your data and account at any time through the settings panel.</p>
+        </div>
+    </div>
+</body>
+</html>
