@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — Evential</title>
+  <meta name="description" content="Real deployment data from Evential's live event intelligence platform. See how BLE badge tracking, automated sponsor ROI, and lead marketplace features perform in the field." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg-base:#0B0E13;--bg-raised:#12161D;--bg-surface:#1A1F2A;--border:rgba(255,255,255,0.06);--border-strong:rgba(255,255,255,0.12);--accent:#E8913A;--accent-hover:#F0A050;--accent-subtle:rgba(232,145,58,0.08);--green:#22C55E;--green-glow:rgba(34,197,94,0.1);--blue:#3B82F6;--text-primary:#F1F3F5;--text-secondary:#9CA3B0;--text-muted:#5C6370;--radius:10px;--radius-sm:6px}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg-base);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+h1,h2,h3,h4{font-weight:700;line-height:1.15;letter-spacing:-0.025em}
+.container{max-width:900px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;display:flex;align-items:center;background:rgba(11,14,19,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+.nav-logo{font-family:'Space Mono',monospace;font-weight:700;font-size:1.1rem;letter-spacing:0.08em;color:var(--text-primary);text-decoration:none}
+.nav-back{color:var(--text-muted);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s;display:flex;align-items:center;gap:6px}
+.nav-back:hover{color:var(--text-primary)}
+.page-header{padding:140px 0 80px;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(232,145,58,0.05) 0%,transparent 70%)}
+.page-header .section-eyebrow{font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+.page-header .section-eyebrow::before{content:'';width:20px;height:1px;background:var(--accent)}
+.page-header h1{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;max-width:600px}
+.page-header p{font-size:1rem;color:var(--text-secondary);max-width:520px;line-height:1.75}
+.case-study{background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(2rem,4vw,3rem);margin-bottom:2rem;position:relative;overflow:hidden;transition:border-color 0.3s}
+.case-study:hover{border-color:var(--border-strong)}
+.case-study::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%}
+.cs-active::before{background:var(--accent)}
+.cs-upcoming::before{background:var(--text-muted)}
+.cs-tag{font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-flex;align-items:center;gap:5px;margin-bottom:1.25rem}
+.cs-tag-live{background:var(--green-glow);color:var(--green);border:1px solid rgba(34,197,94,0.2)}
+.cs-tag-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green)}
+.cs-tag-upcoming{background:rgba(255,255,255,0.04);color:var(--text-muted);border:1px solid var(--border)}
+.cs-meta{font-size:0.82rem;color:var(--text-muted);margin-bottom:1rem;display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem}
+.cs-meta span{display:flex;align-items:center;gap:5px}
+.cs-meta svg{width:13px;height:13px;color:var(--accent)}
+.case-study h2{font-size:1.4rem;margin-bottom:0.75rem}
+.case-study>p{font-size:0.92rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.5rem}
+.cs-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-bottom:1.5rem}
+.cs-stat{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;text-align:center}
+.cs-stat-num{font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--accent)}
+.cs-stat-label{font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px}
+.cs-key-findings{margin-bottom:1.5rem}
+.cs-key-findings h3{font-size:0.92rem;font-weight:600;margin-bottom:0.75rem;color:var(--text-secondary)}
+.cs-finding{display:flex;gap:10px;align-items:flex-start;margin-bottom:0.6rem;font-size:0.88rem;color:var(--text-muted);line-height:1.6}
+.cs-finding::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}
+.cs-cta{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:0.7rem 1.4rem;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.25s ease}
+.btn-primary{background:var(--accent);color:var(--bg-base)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,145,58,0.3)}
+.btn-secondary{background:transparent;color:var(--text-secondary);border:1px solid var(--border-strong)}
+.btn-secondary:hover{border-color:var(--text-muted);color:var(--text-primary)}
+.btn-arrow{transition:transform 0.2s}.btn:hover .btn-arrow{transform:translateX(3px)}
+.cs-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong),transparent);margin:0.5rem 0}
+.bottom-cta{text-align:center;padding:clamp(60px,10vw,100px) 0;position:relative}
+.bottom-cta::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,145,58,0.05) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.bottom-cta h2{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:0.75rem}
+.bottom-cta p{font-size:0.92rem;color:var(--text-secondary);max-width:420px;margin:0 auto 1.5rem;line-height:1.75}
+footer{border-top:1px solid var(--border);padding:2rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Space Mono',monospace;font-weight:700;font-size:0.9rem;letter-spacing:0.08em;color:var(--text-muted)}
+.footer-links{display:flex;gap:1.5rem;list-style:none}
+.footer-links a{font-size:0.75rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--text-secondary)}
+.footer-copy{font-size:0.7rem;color:var(--text-muted)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}
+@media(max-width:600px){.cs-stats{grid-template-columns:1fr 1fr}.cs-meta{flex-direction:column;gap:0.3rem}.footer-inner{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="/" class="nav-logo">EVENTIAL</a><a href="/" class="nav-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Back to Home</a></div></nav>
+
+<div class="page-header"><div class="container"><div class="section-eyebrow">Case Studies</div><h1>Real data from real deployments.</h1><p>Every number below comes from a live event — badges deployed, gateways powered on, data collected. No simulations, no projections.</p></div></div>
+
+<div class="container">
+
+<div class="case-study cs-active reveal">
+  <div class="cs-tag cs-tag-live">Completed &middot; Feb 2026</div>
+  <h2>INtercollegiate Entrepreneurship Summit</h2>
+  <div class="cs-meta">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 16Tech Innovation District, Indianapolis</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg> February 27, 2026</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7.5 hours</span>
+  </div>
+  <p>Our first live deployment. Five BLE gateways across a multi-room venue, shared public Wi-Fi, zero advance venue testing. The system captured comprehensive attendee movement data across all sessions, booths, and common areas — surfacing patterns the organizers had never been able to quantify before.</p>
+
+  <div class="cs-stats">
+    <div class="cs-stat"><div class="cs-stat-num">39%</div><div class="cs-stat-label">No-Show Rate</div></div>
+    <div class="cs-stat"><div class="cs-stat-num">$507</div><div class="cs-stat-label">Waste Found</div></div>
+    <div class="cs-stat"><div class="cs-stat-num">4</div><div class="cs-stat-label">Major Rooms</div></div>
+    <div class="cs-stat"><div class="cs-stat-num">5</div><div class="cs-stat-label">Gateways</div></div>
+    <div class="cs-stat"><div class="cs-stat-num">7.5h</div><div class="cs-stat-label">Uptime</div></div>
+  </div>
+
+  <div class="cs-key-findings">
+    <h3>Key Findings</h3>
+    <div class="cs-finding">39% no-show rate with a measurable geographic predictor — attendees traveling 50+ miles were 3x more likely to not show up.</div>
+    <div class="cs-finding">$507 in preventable food waste identified from a single event based on actual vs. planned attendance.</div>
+    <div class="cs-finding">Persistent spatial asymmetry between two parallel session rooms — one room consistently at 90%+ capacity while the adjacent room ran at under 25%, a pattern nobody had quantified before.</div>
+    <div class="cs-finding">BLE signal achieved 4.6-second average frequency across all zones with zero dead spots, despite shared public Wi-Fi and no advance venue testing.</div>
+    <div class="cs-finding">Badge-to-badge proximity data captured networking density in the dining area — peaking during lunch with 34 simultaneous interactions detected.</div>
+  </div>
+
+  <div class="cs-cta">
+    <a href="/case-study-1.pdf" class="btn btn-primary">Download Full Report <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="https://calendly.com/contact-evential/30min" target="_blank" rel="noopener" class="btn btn-secondary">Discuss This Deployment</a>
+  </div>
+</div>
+
+<div class="cs-divider"></div>
+
+<div class="case-study cs-upcoming reveal d1">
+  <div class="cs-tag cs-tag-upcoming">Upcoming &middot; Summer 2026</div>
+  <h2>Pilot Partner Deployments</h2>
+  <div class="cs-meta">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 3–5 pilot events</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg> Summer 2026</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 400–1,500 attendees each</span>
+  </div>
+  <p>We're partnering with 3–5 event organizers this summer for our first paid deployments. Each pilot will produce a full case study with sponsor ROI data, lead marketplace results, and operational analytics. If you run events where data and sponsor relationships matter, we want to talk.</p>
+
+  <div class="cs-key-findings">
+    <h3>What We're Measuring</h3>
+    <div class="cs-finding">Full sponsor ROI pipeline — from badge tracking through automated report delivery and lead marketplace sales.</div>
+    <div class="cs-finding">Multi-event performance benchmarking across different event types and venue sizes.</div>
+    <div class="cs-finding">Revenue generated through lead marketplace for organizers and value delivered to sponsors.</div>
+    <div class="cs-finding">Time saved on manual sponsor reporting compared to traditional post-event workflows.</div>
+  </div>
+
+  <div class="cs-cta">
+    <a href="https://calendly.com/contact-evential/30min" target="_blank" rel="noopener" class="btn btn-primary">Apply for a Pilot <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</div>
+
+</div>
+
+<div class="bottom-cta"><div class="container"><h2 class="reveal">Want your event to be a case study?</h2><p class="reveal d1">We're looking for organizers who want data-driven events. Pilot spots are limited.</p><a href="https://calendly.com/contact-evential/30min" target="_blank" rel="noopener" class="btn btn-primary reveal d2">Book a Call <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-logo">EVENTIAL</div><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="mailto:contact@evential.co">Contact</a></li></ul><div class="footer-copy">&copy; 2026 Evential, LLC. All rights reserved.</div></div></div></footer>
+
+<script>
+const revealObs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target)}})},{threshold:0.06,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+</script>
+</body>
+</html>
