@@ -1,117 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Evential</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-main: #0B0F14;
-            --bg-card: #121417;
-            --border: #1F2933;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B0B3B8;
-            --accent: #3B82F6;
-            --success: #22C55E;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-secondary);
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 90%;
-            padding: 80px 0;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        h1, h2, h3 {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .last-updated { 
-            font-family: 'Space Mono', monospace; 
-            font-size: 0.85rem; 
-            color: var(--accent); 
-            margin-bottom: 40px; 
-            display: block;
-        }
-
-        h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 40px; }
-        
-        strong { color: var(--text-primary); }
-        
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .back-link:hover { text-decoration: underline; }
-    </style>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Evential — Event Analytics Platform</title>
+  <meta name="description" content="Evential's privacy policy. Learn how Evential's event analytics platform collects, uses, and protects attendee data — including our anonymous-by-default BLE badge tracking and GDPR compliance approach." />
+  <meta property="og:title" content="Privacy Policy | Evential" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://evential.co/privacy" />
+  <link rel="canonical" href="https://evential.co/privacy" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg-base:#0B0E13;--bg-raised:#12161D;--border:rgba(255,255,255,0.06);--accent:#E8913A;--text-primary:#F1F3F5;--text-secondary:#9CA3B0;--text-muted:#5C6370;--radius:10px;--radius-sm:6px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg-base);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:760px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;display:flex;align-items:center;background:rgba(11,14,19,0.95);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+.nav-logo{font-family:'Space Mono',monospace;font-weight:700;font-size:1.1rem;letter-spacing:0.08em;color:var(--text-primary);text-decoration:none}
+.nav-back{color:var(--text-muted);text-decoration:none;font-size:0.82rem}
+.nav-back:hover{color:var(--text-primary)}
+.page-header{padding:120px 0 48px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem}
+h1{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.5rem}
+.updated{font-size:0.8rem;color:var(--text-muted);margin-bottom:0}
+.content{padding:40px 0 80px}
+h2{font-size:1.15rem;font-weight:700;margin:2.5rem 0 0.75rem;color:var(--text-primary)}
+h2:first-child{margin-top:0}
+p,li{font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-bottom:0.8rem}
+li{margin-bottom:0.5rem}
+ul{padding-left:1.5rem;margin-bottom:1rem}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.highlight-box{background:var(--bg-raised);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:1.25rem 1.5rem;margin:1.5rem 0}
+.highlight-box p{margin:0;font-size:0.9rem}
+footer{border-top:1px solid var(--border);padding:2rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.72rem;color:var(--text-muted)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:0.72rem;color:var(--text-muted);text-decoration:none}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-link">← Back to Website</a>
-        <div class="card">
-            <h1>Privacy Policy</h1>
-            <span class="last-updated">LAST UPDATED: APRIL 4, 2026</span>
+<nav><div class="nav-inner"><a href="/" class="nav-logo">EVENTIAL</a><a href="/" class="nav-back">← Back to Home</a></div></nav>
+<div class="page-header">
+  <div class="container">
+    <div class="eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: April 6, 2026</p>
+  </div>
+</div>
+<div class="content">
+  <div class="container">
+    <div class="highlight-box"><p><strong>Summary:</strong> Evential's event analytics platform collects attendee movement data anonymously by default. Personal information is only linked to a badge when an attendee explicitly opts in at event check-in. You can request deletion of your data at any time by contacting <a href="mailto:contact@evential.co">contact@evential.co</a>.</p></div>
 
-            <p>At <strong>Evential</strong>, we take privacy seriously. This policy outlines how we handle data within our event intelligence platform.</p>
+    <h2>1. Who We Are</h2>
+    <p>Evential, LLC ("Evential," "we," "our," or "us") operates the Evential event analytics platform — a software and hardware system that provides real-time BLE badge tracking, conference analytics, trade show analytics, sponsor ROI tracking, and event lead generation services for B2B event organizers. Our platform is accessible at <a href="https://evential.co">evential.co</a> and <a href="https://dashboard.evential.co">dashboard.evential.co</a>.</p>
+    <p>For privacy inquiries, contact us at <a href="mailto:contact@evential.co">contact@evential.co</a>.</p>
 
-            <h2>1. Information We Collect</h2>
-            <p>We collect information necessary to provide real-time event analytics and qualified lead reports:</p>
-            <ul>
-                <li><strong>Account Data:</strong> Names, emails, and organization details provided during registration.</li>
-                <li><strong>Attendee Data:</strong> Information provided by organizers, including names, titles, and company affiliations.</li>
-                <li><strong>Engagement Data:</strong> Proximity-based data from badges used to track movement, dwell times, and booth visits.</li>
-            </ul>
+    <h2>2. Information We Collect</h2>
+    <p><strong>From event attendees (via BLE badge tracking):</strong> When an attendee wears an Evential BLE badge at an event, our gateway sensors capture anonymous badge ID signals along with timestamps and zone locations. This movement data is collected regardless of opt-in status and does not contain personally identifiable information (PII) in its raw form.</p>
+    <p><strong>From attendees who opt in:</strong> When an attendee explicitly opts in at event check-in, their badge ID is linked to their name, email address, and other registration information provided. This linkage enables personalized sponsor lead reports. Opt-in is always voluntary and can be declined without affecting event participation.</p>
+    <p><strong>From event organizers:</strong> We collect account information (name, email, organization), event setup data (floor plans, attendee lists, sponsor information), billing information processed through Stripe, and platform usage data.</p>
+    <p><strong>From website visitors:</strong> We collect standard analytics data (pages visited, time on site, referral source) via Google Analytics. No cookies beyond analytics and essential session cookies are set.</p>
 
-            <h2>2. Data Anonymization & Retention</h2>
-            <p>Our architecture is built on "Privacy by Design" principles:</p>
-            <ul>
-                <li><strong>Automated Scrubbing:</strong> Attendee PII is automatically deleted <strong>30 days</strong> after an event concludes by default (adjustable by organizers).</li>
-                <li><strong>Permanent Anonymization:</strong> Spatial movement data is permanently stripped of identifiers once the retention window expires.</li>
-                <li><strong>Separation:</strong> Movement data and personal identities are stored in architecturally separate databases.</li>
-            </ul>
+    <h2>3. How We Use Information</h2>
+    <ul>
+      <li>To provide real-time event analytics dashboards to event organizers</li>
+      <li>To generate automated sponsor ROI reports from verified booth engagement data</li>
+      <li>To compile qualified lead packages for the event lead generation marketplace (opted-in attendees only)</li>
+      <li>To detect and alert organizers to operational patterns (session capacity, no-show rates, booth engagement)</li>
+      <li>To improve Evential's event analytics software and hardware</li>
+      <li>To communicate with organizers about their account and deployments</li>
+    </ul>
 
-            <h2>3. How We Use Data</h2>
-            <p>Data is used exclusively to:</p>
-            <ul>
-                <li>Generate the Evential Dashboard analytics.</li>
-                <li>Produce qualified lead reports for event sponsors.</li>
-                <li>Provide anonymized platform benchmarks to help organizers improve event ROI.</li>
-            </ul>
+    <h2>4. Anonymous-by-Default Tracking</h2>
+    <p>Evential's BLE badge tracking is anonymous by default. Raw badge movement data — entry times, exit times, zone sequences — is associated with an opaque badge identifier, not a person. No name, email, phone number, or other PII is attached to badge tracking data unless the attendee explicitly opts in.</p>
+    <p>This means: even without any attendee opting in, Evential's event analytics platform can provide organizers with complete venue intelligence — check-in rates, booth traffic, session attendance, dwell times, foot traffic heatmaps — without ever collecting personal information about individuals.</p>
 
-            <h2>4. Security</h2>
-            <p>We utilize industry-standard security measures, including <strong>TLS 1.3</strong> encryption for data in transit and <strong>AES-256</strong> encryption for data at rest via Firebase infrastructure.</p>
+    <h2>5. Data Sharing</h2>
+    <p><strong>With sponsors:</strong> Opted-in attendee contact information is shared with sponsors whose booths the attendee visited and where they met the qualification criteria (5+ minutes dwell, opt-in consent). This sharing only occurs through the event lead generation marketplace, with organizer review before delivery.</p>
+    <p><strong>With service providers:</strong> We use Stripe for payment processing, Google Analytics for website analytics, and cloud infrastructure providers for data storage. These providers process data on our behalf under data processing agreements.</p>
+    <p><strong>We never sell attendee data</strong> to third parties for advertising, marketing, or any purpose unrelated to the specific event the attendee attended.</p>
 
-            <h2>5. Contact</h2>
-            <p>For data access requests or questions regarding your privacy, contact <a href="mailto:privacy@evential.co" style="color: var(--accent);">privacy@evential.co</a>.</p>
-        </div>
-    </div>
+    <h2>6. Data Retention</h2>
+    <p>Event organizers can configure data retention windows of 30, 90, or 365 days. After the selected retention period, event analytics data (including any PII linkages) is automatically purged from Evential's systems. Organizers can also trigger immediate deletion via the dashboard or by contacting us.</p>
+
+    <h2>7. GDPR and CCPA Compliance</h2>
+    <p>For events hosted in the European Union or California, Evential provides pre-built compliance templates covering GDPR and CCPA requirements. These include configurable consent flows, data subject access request handling, and one-click PII erasure. Event organizers are responsible for ensuring their use of Evential's event analytics platform complies with applicable laws in their jurisdiction.</p>
+    <p>EU residents have the right to access, correct, delete, or port their personal data. To exercise these rights, contact <a href="mailto:contact@evential.co">contact@evential.co</a>.</p>
+
+    <h2>8. Security</h2>
+    <p>Evential uses industry-standard encryption for data in transit (TLS) and at rest. Access to attendee data is restricted to authorized Evential personnel and the event organizer whose event the data belongs to. We conduct periodic security reviews and follow responsible disclosure practices.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy as our event analytics platform evolves. Material changes will be communicated to active organizer accounts via email. Continued use of Evential after updates constitutes acceptance of the revised policy.</p>
+
+    <h2>10. Contact</h2>
+    <p>For privacy questions, data deletion requests, or GDPR/CCPA inquiries: <a href="mailto:contact@evential.co">contact@evential.co</a></p>
+  </div>
+</div>
+<footer><div class="container"><div class="footer-inner"><div class="footer-copy">&copy; 2026 Evential, LLC.</div><div class="footer-links"><a href="/">Home</a><a href="/terms">Terms of Service</a><a href="mailto:contact@evential.co">Contact</a></div></div></div></footer>
 </body>
 </html>
