@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Event Analytics Platform for B2B Conferences & Trade Shows | Evential</title>
-  <meta name="description" content="Evential is the event analytics and sponsor ROI platform for B2B organizers. Real-time BLE badge tracking, automated sponsor reports, and a qualified lead marketplace — all in one dashboard." />
+  <title>Event Analytics & Sponsor ROI Platform for B2B Events | Evential</title>
+  <meta name="description" content="Evential helps B2B event organizers track attendee behavior, measure sponsor ROI, and generate real-time insights with BLE badge tracking and automated reports." />
   <meta name="keywords" content="event analytics platform, conference analytics software, trade show analytics, sponsor ROI tracking, event lead generation, BLE badge tracking, attendee tracking, event intelligence platform" />
   <meta property="og:title" content="Event Analytics Platform for B2B Conferences & Trade Shows | Evential" />
   <meta property="og:description" content="Real-time BLE badge tracking, automated sponsor ROI reports, and a qualified lead marketplace for B2B event organizers." />
@@ -17,8 +17,11 @@
   <meta name="twitter:title" content="Event Analytics Platform | Evential" />
   <meta name="twitter:description" content="Real-time BLE badge tracking, automated sponsor ROI reports, and a qualified lead marketplace for B2B event organizers." />
   <meta name="twitter:image" content="https://evential.co/og-image.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="canonical" href="https://evential.co" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -313,7 +316,7 @@ nav.scrolled{background:rgba(11,14,19,0.95)}
 .use-case-card p{font-size:0.84rem;color:var(--text-muted);line-height:1.65}
 
 footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
 .footer-brand p{font-size:0.84rem;color:var(--text-muted);line-height:1.7;margin-top:0.75rem;max-width:280px}
 .footer-col-title{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem}
 .footer-col a{display:block;font-size:0.84rem;color:var(--text-secondary);text-decoration:none;padding:0.3rem 0;transition:color 0.2s}
@@ -326,6 +329,22 @@ footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
 .trust-item svg{width:14px;height:14px;color:var(--accent)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+.auto-feature .card-title, .auto-node-text .card-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.privacy-card .card-title, .use-case-card .card-title {
+  font-size: 1rem;
+}
 .d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}.d5{transition-delay:0.4s}.d6{transition-delay:0.48s}
 @media(max-width:1024px){.dashboard-body{grid-template-columns:1fr}.dash-sidebar{display:none}.auto-layout{grid-template-columns:1fr;gap:2.5rem}.live-feed-layout{grid-template-columns:1fr}.case-study-banner{grid-template-columns:1fr;text-align:center}.csb-stats{justify-content:center}.what-grid{grid-template-columns:1fr}}
 @media(max-width:900px){.how-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.privacy-grid{grid-template-columns:1fr}.who-grid{grid-template-columns:1fr}.dash-stats{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.use-cases-grid{grid-template-columns:1fr}}
@@ -420,17 +439,17 @@ footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
     <div class="use-cases-grid">
       <div class="use-case-card reveal">
         <div class="use-case-label">Trade Shows</div>
-        <h3>Trade Show Analytics</h3>
+        <div class="card-title">Trade Show Analytics</div>
         <p>Track exhibitor booth performance, measure sponsor engagement, and give vendors the verified ROI data they need to re-book next year. Identify your highest-traffic zones and optimize floor plan layout with <a href="/event-analytics-software" style="color:var(--accent);text-decoration:none">event analytics features</a>.</p>
       </div>
       <div class="use-case-card reveal d1">
         <div class="use-case-label">B2B Conferences</div>
-        <h3>Conference Analytics Software</h3>
+        <div class="card-title">Conference Analytics Software</div>
         <p>Monitor session attendance capacity in real time, identify no-show patterns, and measure the true reach of each sponsor's presence. Evential's conference analytics software turns your event data into a retention tool for sponsors.</p>
       </div>
       <div class="use-case-card reveal d2">
         <div class="use-case-label">Corporate Events</div>
-        <h3>Corporate Event Intelligence</h3>
+        <div class="card-title">Corporate Event Intelligence</div>
         <p>From internal summits to partner expos, understand how your agenda performed, which topics drew the largest crowds, and where your venue investment is best spent next time. <a href="/case-studies" style="color:var(--accent);text-decoration:none">See how event tracking works</a> in practice.</p>
       </div>
     </div>
@@ -469,37 +488,37 @@ footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
       <div class="how-card reveal">
         <div class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
         <div class="how-number" aria-hidden="true">01</div>
-        <h3>Create Your Event</h3>
+        <div class="card-title">Create Your Event</div>
         <p>A multi-step wizard guides you through event setup, floor plan design with drag-and-drop booth placement, and attendee CSV import. Your event analytics configuration is saved and ready to deploy.</p>
       </div>
       <div class="how-card reveal d1">
         <div class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
         <div class="how-number" aria-hidden="true">02</div>
-        <h3>Deploy BLE Badges</h3>
+        <div class="card-title">Deploy BLE Badges</div>
         <p>Ship smart BLE badges to your venue. Gateway sensors track attendee movement throughout the space in real time — capturing booth engagement and session attendance with zero behavior change required from attendees.</p>
       </div>
       <div class="how-card reveal d2">
         <div class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <div class="how-number" aria-hidden="true">03</div>
-        <h3>Watch It Live</h3>
+        <div class="card-title">Watch It Live</div>
         <p>See real-time check-ins, booth heatmaps, session attendance, dwell times, and foot traffic patterns as your event unfolds. Your <a href="#features" style="color:var(--accent);text-decoration:none">event analytics features</a> dashboard updates continuously.</p>
       </div>
       <div class="how-card reveal d3">
         <div class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
         <div class="how-number" aria-hidden="true">04</div>
-        <h3>Auto-Generate Sponsor ROI Reports</h3>
+        <div class="card-title">Auto-Generate Sponsor ROI Reports</div>
         <p>Within 24 hours of event close, sponsors receive comprehensive ROI reports showing booth performance vs. event averages — the kind of verified sponsor ROI tracking data that drives renewals.</p>
       </div>
       <div class="how-card reveal d4">
         <div class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <div class="how-number" aria-hidden="true">05</div>
-        <h3>Sell Qualified Leads</h3>
+        <div class="card-title">Sell Qualified Leads</div>
         <p>Build and sell lead reports to sponsors — contacts who visited their booth, dwelled 5+ minutes, and opted in to data sharing. Evential's <a href="#features" style="color:var(--accent);text-decoration:none">event lead generation</a> marketplace turns attendee engagement into post-event revenue.</p>
       </div>
       <div class="how-card reveal d5">
         <div class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="how-number" aria-hidden="true">06</div>
-        <h3>Stay GDPR Compliant</h3>
+        <div class="card-title">Stay GDPR Compliant</div>
         <p>Attendee movement data is anonymous by default. PII is not linked when attendees opt out at check-in. Built-in country-based <a href="#privacy" style="color:var(--accent);text-decoration:none">GDPR compliant event tracking</a> templates handle the rest automatically.</p>
       </div>
     </div>
@@ -515,25 +534,25 @@ footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
       <div class="feature-card reveal">
         <div class="feature-card-icon fc-orange" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
         <div class="feature-card-tag">Live Dashboard</div>
-        <h3>Real-Time Event Analytics Dashboard</h3>
+        <div class="card-title">Real-Time Event Analytics Dashboard</div>
         <p>Who showed up, who didn't, which booths are buzzing, and which rooms are dead — all live in your event analytics dashboard. Stop guessing what's happening on the floor. Evential's attendee tracking shows you instantly.</p>
       </div>
       <div class="feature-card reveal d1">
         <div class="feature-card-icon fc-blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
         <div class="feature-card-tag">Event Setup</div>
-        <h3>Guided Event Configuration</h3>
+        <div class="card-title">Guided Event Configuration</div>
         <p>A guided wizard walks you through floor plan, booth layout, and attendee list upload. A readiness score confirms you're good to go — so your conference analytics software is live from minute one.</p>
       </div>
       <div class="feature-card reveal d2">
         <div class="feature-card-icon fc-green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
         <div class="feature-card-tag">Sponsor ROI Tracking</div>
-        <h3>Automated Sponsor ROI Reports</h3>
+        <div class="card-title">Automated Sponsor ROI Reports</div>
         <p>Auto-generated ROI reports with verified numbers — booth traffic, dwell time, qualified leads. The sponsor ROI tracking data that makes exhibitors renew before you even ask. Then sell those leads on top, adding a new revenue stream post-event.</p>
       </div>
       <div class="feature-card reveal d3">
         <div class="feature-card-icon fc-purple" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <div class="feature-card-tag">Lead Marketplace</div>
-        <h3>Event Lead Generation Marketplace</h3>
+        <div class="card-title">Event Lead Generation Marketplace</div>
         <p>Build verified lead packages from booth-engaged, opted-in attendees and sell them directly to sponsors through Evential's built-in event lead generation marketplace — turning post-event data into ongoing revenue.</p>
       </div>
     </div>
@@ -548,18 +567,18 @@ footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
         <h2 class="section-heading reveal d1">Build workflows that run on event triggers. <br></h2>
         <p class="section-desc reveal d2" style="margin-bottom:2.5rem">Set up automation routines with triggers, conditions, and actions. Drag and drop from a library of pre-built actions — or build your own workflows to connect event data analytics to your existing tools.</p>
         <div class="auto-features">
-          <div class="auto-feature reveal d3"><div class="auto-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Send Email</h4><p>Customizable emails to recipient lists triggered by event activity — check-in thresholds, booth milestones, or session capacity alerts.</p></div></div>
-          <div class="auto-feature reveal d4"><div class="auto-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div><h4>Push Notifications</h4><p>Alert organizers in the event analytics dashboard the moment key thresholds are hit — no checking required.</p></div></div>
-          <div class="auto-feature reveal d5"><div class="auto-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><h4>Export Sponsor ROI</h4><p>Automatically generate and send sponsor ROI tracking reports at event close — no manual compilation needed.</p></div></div>
-          <div class="auto-feature reveal d6"><div class="auto-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><h4>Webhooks & Integrations</h4><p>POST event data to Zapier, Make, or any custom endpoint in real time — keeping your event data analytics connected to your stack.</p></div></div>
+          <div class="auto-feature reveal d3"><div class="auto-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="card-title">Send Email</div><p>Customizable emails to recipient lists triggered by event activity — check-in thresholds, booth milestones, or session capacity alerts.</p></div></div>
+          <div class="auto-feature reveal d4"><div class="auto-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div><div class="card-title">Push Notifications</div><p>Alert organizers in the event analytics dashboard the moment key thresholds are hit — no checking required.</p></div></div>
+          <div class="auto-feature reveal d5"><div class="auto-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="card-title">Export Sponsor ROI</div><p>Automatically generate and send sponsor ROI tracking reports at event close — no manual compilation needed.</p></div></div>
+          <div class="auto-feature reveal d6"><div class="auto-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="card-title">Webhooks & Integrations</div><p>POST event data to Zapier, Make, or any custom endpoint in real time — keeping your event data analytics connected to your stack.</p></div></div>
         </div>
       </div>
       <div class="auto-visual reveal" role="img" aria-label="Evential automation workflow diagram showing event triggers connected to sponsor ROI export actions">
-        <div class="auto-node" style="margin-top:12px" id="auto-node-1"><div class="auto-node-tag tag-trigger">Trigger</div><div class="auto-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="auto-node-text"><h4>Event Goes Live</h4><p>Fires when event status changes to live.</p></div></div>
+        <div class="auto-node" style="margin-top:12px" id="auto-node-1"><div class="auto-node-tag tag-trigger">Trigger</div><div class="auto-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="auto-node-text"><div class="card-title">Event Goes Live</div><p>Fires when event status changes to live.</p></div></div>
         <div class="auto-connector" aria-hidden="true"><div class="auto-connector-line"></div><div class="auto-connector-arrow"></div></div>
-        <div class="auto-node" id="auto-node-2"><div class="auto-node-tag tag-action">Action</div><div class="auto-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="auto-node-text"><h4>Send Push Notification</h4><p>Notify the organizer's dashboard.</p></div></div>
+        <div class="auto-node" id="auto-node-2"><div class="auto-node-tag tag-action">Action</div><div class="auto-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="auto-node-text"><div class="card-title">Send Push Notification</div><p>Notify the organizer's dashboard.</p></div></div>
         <div class="auto-connector" aria-hidden="true"><div class="auto-connector-line"></div><div class="auto-connector-arrow"></div></div>
-        <div class="auto-node" id="auto-node-3"><div class="auto-node-tag tag-action">Action</div><div class="auto-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="auto-node-text"><h4>Send Webhook</h4><p>POST event data to an external URL.</p></div></div>
+        <div class="auto-node" id="auto-node-3"><div class="auto-node-tag tag-action">Action</div><div class="auto-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="auto-node-text"><div class="card-title">Send Webhook</div><p>POST event data to an external URL.</p></div></div>
       </div>
     </div>
   </div>
@@ -573,17 +592,17 @@ footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
     <div class="privacy-grid">
       <div class="privacy-card reveal">
         <div class="privacy-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Anonymous Attendee Tracking</h3>
+        <div class="card-title">Anonymous Attendee Tracking</div>
         <p>Badge movement data never contains PII and attendees can explicitly opt out. Your <a href="/event-analytics-software" style="color:var(--accent);text-decoration:none">event analytics software</a> respects attendee privacy by default.</p>
       </div>
       <div class="privacy-card reveal d1">
         <div class="privacy-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <h3>Privacy Compliant</h3>
+        <div class="card-title">Privacy Compliant</div>
         <p>Pre-built privacy templates for country-based compliance like GDPR & CCPA, configurable data retention, and one-click PII erasure give your event organizers full regulatory control.</p>
       </div>
       <div class="privacy-card reveal d2">
         <div class="privacy-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3>Configurable Data Retention</h3>
+        <div class="card-title">Configurable Data Retention</div>
         <p>Choose 30, 90, or 365-day retention windows. Auto-purge ensures event data analytics don't linger beyond your policy — keeping compliance automatic.</p>
       </div>
     </div>
@@ -598,17 +617,17 @@ footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
     <div class="who-grid">
       <div class="who-card reveal">
         <div class="who-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <h3>Event Organizers</h3>
+        <div class="card-title">Event Organizers</div>
         <p>Running B2B conferences, trade shows, and corporate events with 400–1,500+ attendees. Get real-time event analytics and automate the sponsor ROI reporting you've been doing by hand. <a href="/conference-analytics" style="color:var(--accent);text-decoration:none">Explore conference analytics</a>.</p>
       </div>
       <div class="who-card reveal d1">
         <div class="who-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h3>Venue Operators</h3>
+        <div class="card-title">Venue Operators</div>
         <p>Seeking attendee tracking and space utilization analytics across events. Permanent gateway installations let every event that books your space activate Evential's event intelligence platform automatically.</p>
       </div>
       <div class="who-card reveal d2">
         <div class="who-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Sponsors & Exhibitors</h3>
+        <div class="card-title">Sponsors & Exhibitors</div>
         <p>You paid for a booth. Get verified, qualified leads with dwell time data, return visit rates, and automated sponsor ROI reports delivered within 24 hours of event close. <a href="/sponsor-roi-tracking" style="color:var(--accent);text-decoration:none">Learn how sponsor ROI tracking works</a>.</p>
       </div>
     </div>
@@ -730,6 +749,13 @@ footer{border-top:1px solid var(--border);padding:3.5rem 0 2rem}
         <a href="mailto:contact@evential.co">Contact</a>
         <a href="/privacy">Privacy Policy</a>
         <a href="/terms">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Socials</div>
+        <a href="https://x.com/eventialco" target="_blank" rel="noopener">X (Twitter)</a>
+        <a href="https://www.linkedin.com/company/eventialco/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.youtube.com/@eventialco" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/eventialco/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">
