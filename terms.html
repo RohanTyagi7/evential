@@ -1,107 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | Evential</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-main: #0B0F14;
-            --bg-card: #121417;
-            --border: #1F2933;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B0B3B8;
-            --accent: #3B82F6;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-secondary);
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 90%;
-            padding: 80px 0;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        h1, h2, h3 {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .last-updated { 
-            font-family: 'Space Mono', monospace; 
-            font-size: 0.85rem; 
-            color: var(--accent); 
-            margin-bottom: 40px; 
-            display: block;
-        }
-
-        h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 40px; }
-        
-        strong { color: var(--text-primary); }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .back-link:hover { text-decoration: underline; }
-    </style>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service | Evential — Event Analytics Platform</title>
+  <meta name="description" content="Evential's terms of service governing use of the Evential event analytics platform, BLE badge tracking hardware, and sponsor ROI reporting services." />
+  <meta property="og:title" content="Terms of Service | Evential" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://evential.co/terms" />
+  <link rel="canonical" href="https://evential.co/terms" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg-base:#0B0E13;--bg-raised:#12161D;--border:rgba(255,255,255,0.06);--accent:#E8913A;--text-primary:#F1F3F5;--text-secondary:#9CA3B0;--text-muted:#5C6370;--radius:10px;--radius-sm:6px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg-base);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:760px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;display:flex;align-items:center;background:rgba(11,14,19,0.95);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+.nav-logo{font-family:'Space Mono',monospace;font-weight:700;font-size:1.1rem;letter-spacing:0.08em;color:var(--text-primary);text-decoration:none}
+.nav-back{color:var(--text-muted);text-decoration:none;font-size:0.82rem}
+.nav-back:hover{color:var(--text-primary)}
+.page-header{padding:120px 0 48px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem}
+h1{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.5rem}
+.updated{font-size:0.8rem;color:var(--text-muted)}
+.content{padding:40px 0 80px}
+h2{font-size:1.15rem;font-weight:700;margin:2.5rem 0 0.75rem;color:var(--text-primary)}
+h2:first-child{margin-top:0}
+p,li{font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-bottom:0.8rem}
+li{margin-bottom:0.5rem}
+ul{padding-left:1.5rem;margin-bottom:1rem}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid var(--border);padding:2rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.72rem;color:var(--text-muted)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:0.72rem;color:var(--text-muted);text-decoration:none}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-link">← Back to Website</a>
-        <div class="card">
-            <h1>Terms of Service</h1>
-            <span class="last-updated">EFFECTIVE DATE: APRIL 4, 2026</span>
+<nav><div class="nav-inner"><a href="/" class="nav-logo">EVENTIAL</a><a href="/" class="nav-back">← Back to Home</a></div></nav>
+<div class="page-header">
+  <div class="container">
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: April 6, 2026</p>
+  </div>
+</div>
+<div class="content">
+  <div class="container">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using Evential's event analytics platform, BLE badge hardware, sponsor ROI tracking services, or event lead generation marketplace (collectively, the "Services"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Services.</p>
 
-            <h2>1. Acceptance of Terms</h2>
-            <p>By using <strong>evential.co</strong>, you agree to these terms. If you are using this on behalf of an organization, you represent that you have the authority to bind that organization to these terms.</p>
+    <h2>2. Description of Services</h2>
+    <p>Evential provides a software and hardware platform for B2B event analytics, including: real-time BLE badge attendee tracking, conference analytics dashboards, trade show analytics, automated sponsor ROI report generation, and a qualified event lead generation marketplace. Services are provided to registered event organizers ("Organizers") and may be deployed at events for the benefit of attendees and sponsors.</p>
 
-            <h2>2. Service Description</h2>
-            <p>Evential provides event intelligence software including floor plan design, attendee proximity tracking, and lead generation reporting.</p>
+    <h2>3. Account Registration</h2>
+    <p>Organizers must register for an account to use Evential's event analytics dashboard. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You must provide accurate and current information during registration.</p>
 
-            <h2>3. Organizer Responsibilities</h2>
-            <p>Organizers are responsible for:</p>
-            <ul>
-                <li>Maintaining account security and password confidentiality.</li>
-                <li><strong>Attendee Consent:</strong> Obtaining necessary legal consent from attendees for tracking and data sharing.</li>
-                <li>Ensuring all uploaded attendee data complies with local privacy laws.</li>
-            </ul>
+    <h2>4. Organizer Responsibilities</h2>
+    <p>As an Organizer using Evential's event analytics platform, you agree to:</p>
+    <ul>
+      <li>Clearly disclose to attendees that BLE badge tracking and event analytics are in use at your event</li>
+      <li>Obtain appropriate consent from attendees for personal data collection, in compliance with applicable laws (including GDPR and CCPA where applicable)</li>
+      <li>Use attendee data only for the purposes disclosed at the time of collection</li>
+      <li>Not resell, redistribute, or misuse attendee data obtained through Evential's event lead generation marketplace</li>
+      <li>Comply with all applicable laws and regulations governing event management and data privacy in your jurisdiction</li>
+    </ul>
 
-            <h2>4. Payments & Billing</h2>
-            <p>We use <strong>Stripe</strong> for all payment processing. By adding a card to your account, you authorize Evential to charge for subscription fees and lead report generation costs. All sales of digital lead reports are final once downloaded.</p>
+    <h2>5. Hardware</h2>
+    <p>BLE badge hardware and gateway sensors provided by Evential remain the property of Evential and must be returned after your event deployment. Organizers are responsible for the safekeeping of hardware during the deployment period. Damage to or loss of hardware will be billed at replacement cost.</p>
 
-            <h2>5. Intellectual Property</h2>
-            <p>The Evential platform, including its proprietary analytics engines and dashboard interface, is the exclusive property of Evential. You retain ownership of your event-specific data.</p>
+    <h2>6. Payments and Billing</h2>
+    <p>Event analytics platform fees are billed per event deployment as agreed at the time of booking. Payment is processed through Stripe. All fees are non-refundable except as expressly stated in your service agreement. Organizers are responsible for all applicable taxes.</p>
 
-            <h2>6. Limitation of Liability</h2>
-            <p>Evential is provided "as is." We do not guarantee 100% accuracy in proximity tracking due to variables in venue environments (e.g., signal interference). We are not liable for any business decisions made based on platform analytics.</p>
+    <h2>7. Data and Privacy</h2>
+    <p>Evential's collection and use of data is governed by our <a href="/privacy">Privacy Policy</a>. Organizers who use Evential's event analytics platform act as data controllers for their attendees' personal data; Evential acts as a data processor. Organizers are responsible for ensuring their use of the platform complies with applicable data protection laws.</p>
 
-            <h2>7. Termination</h2>
-            <p>We reserve the right to suspend accounts that violate these terms or participate in fraudulent activities. You may delete your data and account at any time through the settings panel.</p>
-        </div>
-    </div>
+    <h2>8. Intellectual Property</h2>
+    <p>All software, dashboards, analytics methodologies, hardware designs, and platform features are the intellectual property of Evential, LLC. Organizers receive a limited, non-exclusive license to use the Services for their events. No ownership rights are transferred.</p>
+
+    <h2>9. Limitation of Liability</h2>
+    <p>Evential's event analytics platform is provided "as is." To the maximum extent permitted by law, Evential disclaims all warranties, express or implied. Evential's total liability for any claim arising from use of the Services shall not exceed the fees paid by the Organizer for the specific event deployment giving rise to the claim.</p>
+
+    <h2>10. Termination</h2>
+    <p>Either party may terminate a service arrangement with written notice. Evential may suspend or terminate access immediately if an Organizer violates these Terms or applicable law. Upon termination, organizer event analytics data will be retained per the configured retention period, then purged.</p>
+
+    <h2>11. Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of Indiana, United States. Disputes shall be resolved in the courts of Tippecanoe County, Indiana.</p>
+
+    <h2>12. Contact</h2>
+    <p>For questions about these Terms of Service: <a href="mailto:contact@evential.co">contact@evential.co</a></p>
+  </div>
+</div>
+<footer><div class="container"><div class="footer-inner"><div class="footer-copy">&copy; 2026 Evential, LLC.</div><div class="footer-links"><a href="/">Home</a><a href="/privacy">Privacy Policy</a><a href="mailto:contact@evential.co">Contact</a></div></div></div></footer>
 </body>
 </html>
